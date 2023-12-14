@@ -4,7 +4,16 @@ import "./Hero.css";
 const Hero = () => {
 	return (
 		<Container>
-			<div className="title">Welcome to Prompt, your one stop printing solution.</div>
+			<section className="text-[#23262F] flex">
+				<div>
+					<h1 className="font-montagu text-[110px] tracking-[-2.2px]">Jump queues and print 101</h1>
+				</div>
+				<img
+					className="w-[564px] h-[717px] object-cover"
+					src="/assets/images/heroImage.png"
+					alt=""
+				/>
+			</section>
 		</Container>
 	);
 };
