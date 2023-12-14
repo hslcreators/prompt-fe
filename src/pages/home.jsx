@@ -1,5 +1,12 @@
+import PageContainer from "@components/PageContainer/PageContainer";
+import Hero from "@sections/Home/hero/Hero";
+
 const Home = () => {
-	return <div className="title">Welcome to Prompt, your one stop printing solution.</div>;
+	return (
+		<PageContainer>
+			<Hero />
+		</PageContainer>
+	);
 };
 
 export default Home;
