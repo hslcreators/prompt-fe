@@ -5,8 +5,8 @@ import VendorsPage from "./vendorsPage";
 const Home = () => {
 	return (
 		<PageContainer>
-			<Hero />
-			<div>rere</div>
+			{/* <Hero />
+			<div>rere</div> */}
 			<VendorsPage />
 		</PageContainer>
 	);

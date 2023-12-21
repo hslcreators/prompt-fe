@@ -6,7 +6,7 @@ export default {
 			vsm: "1px",
 			sm: "375px",
 			nsm: "600px",
-			md: "376px",
+			md: "424px",
 			lg: "565px",
 			nxl: "800px",
 			xl: "1110px",
