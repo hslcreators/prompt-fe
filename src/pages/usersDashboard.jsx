@@ -1,7 +1,6 @@
 import PageContainer from "@components/PageContainer/PageContainer";
 import VendorsSideBar from "@sections/VendorsPage/vendorsSideBar/VendorsSideBar";
 import VendorsSearchArea from "@sections/VendorsPage/vendorsSearchArea/VendorsSearchArea";
-import VendorsSearchFilter from "@sections/VendorsPage/vendorsSearchFilter/VendorsSearchFilter";
 import VendorsCardRatings from "@sections/VendorsPage/vendorsCardRatings/VendorsCardRatings";
 import UsersHero from "@sections/UsersDashboard/usersHero/UsersHero";
 
@@ -13,7 +12,6 @@ const usersDashboard = () => (
 				<VendorsSearchArea />
 				<div className="flex flex-col items-center">
 					<div className="w-[78%] lg:w-[86%] bordesr-2">
-						{/* <VendorsSearchFilter /> */}
 						<UsersHero />
 					</div>
 					<div className="w-[78%] lg:w-[86%] ">

@@ -1,6 +1,5 @@
 import React from "react";
 import wave from "../../../../public/assets/icons/wave.svg";
-import down from "../../../../public/assets/icons/downArrow.svg";
 import megaSale from "../../../../public/assets/images/megaSale.png";
 import VendorCard from "@components/VendorCard/VendorCard";
 
@@ -34,8 +33,8 @@ const UsersHero = () => {
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
-                    <VendorCard />
-                    <VendorCard />
+					<VendorCard />
+					<VendorCard />
 				</div>
 				<div className="vsm:hidden lg:flex flex-row justify-between font-normal">
 					<div>Vendors</div>
