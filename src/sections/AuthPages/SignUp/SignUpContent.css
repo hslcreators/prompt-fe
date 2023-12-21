@@ -1,0 +1,10 @@
+.signup-content{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.signup-content .bottom-text{
+    display: flex;
+    position: static;
+    margin-top: 10px;
+}
