@@ -1,0 +1,130 @@
+.login-content{
+    width: 50vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-content .heading{
+    margin-top: 30px;
+}
+
+.login-content .form-title{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content .form-title .p-text{
+    background: #fff;
+    z-index: 1;
+}
+
+.form-content .form-title p{
+    font-size: 14px;
+    color: #878787;
+}
+
+.login-content .form-content .dotted-line{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 0px;
+    border: 1px dashed gray;
+    /* background: #323232; */
+}
+
+.input-label{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 330px;
+    margin-top: 15px;
+}
+
+.input-label input{
+    all: initial;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #cdcdcd;
+    margin-top: 5px;
+    padding-left: 7px;
+    border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-label span{
+    color: #4a4a4a;
+}
+
+.input-label input::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.form-content .form-bottom{
+    width: 90%;
+    max-width: 330px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.remember-check{
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+}
+
+.remember-check input{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.remember-check input:hover{
+    border: 1px solid #524ECA;
+}
+
+.form-content .form-bottom p.forgot{
+    font-size: 13px;
+    font-weight: bolder;
+    color: #524ECA;
+}
+
+.form-content .submit-btn{
+    width: 90%;
+    max-width: 330px;
+    height: 40px;
+    background: #524ECA;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 15px;
+    margin-top: 25px;
+    transition: all .3s ease;
+}
+
+.form-content .submit-btn:hover{
+    transform: scale(1.04, 1.01);
+    background: #272479;
+}
+
+.lc .bottom-text{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+}
+
+.bottom-text p{
+    font-size: 14px;
+    font-weight: bolder;
+    color: #5d5d5d;
+    margin: 0px 4px;
+}

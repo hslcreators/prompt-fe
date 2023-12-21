@@ -1,0 +1,13 @@
+.forgot-content{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-content .heading{
+    width: 90%;
+    max-width: 330px;
+}
