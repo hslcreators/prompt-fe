@@ -7,7 +7,7 @@ import bellMob from "../../../../public/assets/icons/bellMob.svg";
 const VendorsSearchArea = () => {
 	return (
 		<React.Fragment>
-			<div className=" h-[17vw] md:h-[12vw] lg:h-[15vw] max-h-[86px] border-b-[1.75px] rounded-md w-full h-fit border-[#D9D9D9] bg-white">
+			<div className="h-[17vw] md:h-[12vw] lg:h-[15vw] max-h-[86px] border-b-[1.75px] rounded-md w-full h-fit border-[#D9D9D9] bg-white">
 				<div className="flex flex-row justify-center items-center h-full">
 					<input
 						id="FName"
@@ -17,7 +17,7 @@ const VendorsSearchArea = () => {
 					/>
 					<div className="flex flex-row gap-[11px] ml-[4vw]">
 						<button className=" ">
-							<div className="w-[28px] h-[28px]">
+							<div className="w-[6vw] h-[6vw] lg:w-[28px] lg:h-[28px]">
 								<picture className="">
 									<source
 										className=""
@@ -33,7 +33,7 @@ const VendorsSearchArea = () => {
 							</div>
 						</button>
 						<button className=" ">
-							<div className="w-[24px] h-[30px]">
+							<div className="w-[6vw] h-[6vw] lg:w-[24px] lg:h-[30px]">
 								<picture className="">
 									<source
 										className=""

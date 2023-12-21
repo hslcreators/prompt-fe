@@ -6,7 +6,7 @@ const VendorsSearchFilter = () => {
 	return (
 		<React.Fragment>
 			<div className="flex flex-col pt-[3vw] pb-[7vw] lg:pt-[4vw] lg:pb-[6vw] nxl:pt-[1vw] nxl:pb-[4vw]">
-				<div className="flex flex-row vsm:mb-0 lg:mb-[2vw]">
+				<button className="flex flex-row vsm:mb-0 lg:mb-[2vw]">
 					<div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]">
 						<img
 							className="w-full h-full object-cover"
@@ -15,7 +15,7 @@ const VendorsSearchFilter = () => {
 						/>
 					</div>
 					<div className="text-[#4A5568] font-bold vsm:text-[5.2vw] lg:text-[20px] xl:text-[30px] ml-[1.5vw] lg:ml-[12px] xl:ml-[20px]">Vendors</div>
-				</div>
+				</button>
 				<div className="vsm:hidden lg:flex flex-row justify-between">
 					<div>
 						<input
