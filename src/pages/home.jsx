@@ -5,9 +5,9 @@ import UsersDashboard from "./usersDashboard";
 const Home = () => {
 	return (
 		<PageContainer>
-			{/* <Hero />
-			<div>rere</div> */}
-			{/* <VendorsPage /> */}
+			{/* <Hero /> */}
+
+			<VendorsPage />
 			<UsersDashboard />
 		</PageContainer>
 	);

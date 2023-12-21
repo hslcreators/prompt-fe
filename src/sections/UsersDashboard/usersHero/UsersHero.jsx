@@ -35,7 +35,9 @@ const UsersHero = () => {
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
-					<VendorCard />
+					<div className="lg:hidden">
+						<VendorCard />
+					</div>
 				</div>
 				<div className="vsm:fhidden flex flex-row justify-between font-normal sm:text-[18px]">
 					<div>Vendors</div>
