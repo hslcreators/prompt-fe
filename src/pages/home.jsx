@@ -9,7 +9,6 @@ const Home = () => {
 			<div>rere</div> */}
 			{/* <VendorsPage /> */}
 			<UsersDashboard />
-			<div>rere</div>
 		</PageContainer>
 	);
 };
