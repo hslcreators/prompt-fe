@@ -47,6 +47,10 @@
     justify-content: center;
 }
 
+.verify-content .pin-input input.focus{
+    border: 3px solid #524ECA;
+}
+
 .verify-content .pin-input input::-webkit-outer-spin-button,
 .verify-content .pin-input input::-webkit-inner-spin-button{
     display: none;

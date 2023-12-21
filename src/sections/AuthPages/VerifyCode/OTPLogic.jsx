@@ -6,33 +6,60 @@ const OTPLogic = (inputRefs) => {
 
     const inputAction = (allInputs, currentIndex, backspace) => {
         allInputs.forEach((input, index) => {
+            input.setAttribute('readonly', 'readonly')
             if(index == currentIndex){
+                input.classList.add('focus')
+                input.removeAttribute('readonly', 'readonly')
                 input.focus()
                 input.addEventListener('keydown', (e)=> {
                         if(allowedKeys.includes(e.key)){
-                            console.log(e.key)
                             if(e.key == 'Backspace'){
-                                if(input.value.length == 0){
-                                    e.preventDefault()
-                                    input.blur()
-                                    inputAction(allInputs, currentIndex - 1, true)
+                                console.log(currentIndex)
+                                if(currentIndex > 0){
+                                    if(input.value.length == 0){
+                                        e.preventDefault()
+                                        input.blur()
+                                        inputAction(allInputs, currentIndex - 1, true)
+                                        allInputs[currentIndex - 1].addEventListener('keyup', (e)=>{
+                                            allInputs[currentIndex - 1].focus()
+                                            if(currentIndex <= 1){
+                                                inputAction(allInputs, 0)
+                                            }else{
+                                                if(e.key == 'Backspace'){
+                                                    input.classList.remove('focus')
+                                                    allInputs[currentIndex - 1].value = ''
+                                                }else{
+                                                    input.classList.remove('focus')
+                                                    allInputs[currentIndex - 1].value = e.key
+                                                }
+                                            }
+                                        })
+                                    }
                                 }
                             }else{
-                                if(input.value.length == 1){
-                                   if(!backspace){
-                                    e.preventDefault()
-                                    inputAction(allInputs, currentIndex + 1, false)
-                                   }
+                                if(currentIndex < 5){
+                                    if(input.value.length == 1){
+                                        if(!backspace){
+                                         e.preventDefault()
+                                         inputAction(allInputs, currentIndex + 1, false)
+                                        }
+                                     }else{
+                                        if(!backspace){
+                                         input.addEventListener('keyup', (e)=> {
+                                             inputAction(allInputs, currentIndex + 1, false)
+                                         })
+                                        }
+                                     }
+                                     
                                 }else{
-                                   if(!backspace){
-                                    input.addEventListener('keyup', (e)=> {
-                                        inputAction(allInputs, currentIndex + 1, false)
-                                    })
-                                   }
+                                    allInputs[5].removeAttribute('readonly', 'readonly')
+                                    allInputs[5].focus()
                                 }
                             }
                         }
                 })
+            }else{
+                input.classList.remove('focus')
             }
         });
     }

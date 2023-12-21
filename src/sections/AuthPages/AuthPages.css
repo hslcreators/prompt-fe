@@ -15,13 +15,12 @@
 }
 
 .heading{
-    width: 90%;
-     max-width: 330px;
     line-height: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 
 .heading h1{
     font-weight: bold;
