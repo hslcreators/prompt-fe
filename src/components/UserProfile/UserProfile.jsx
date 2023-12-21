@@ -25,7 +25,7 @@ const UserProfile = () => {
 				<div className="hidden lg:block font-Roboto text-[10px] font-bold relative top-[4px] flex flex-row">
 					<div>John Doe</div> <div>Web Designer</div>
 				</div>
-				<div className="border-2 p-[1vw] rounded-sm w-[70%] lg:w-auto flex flex-row justify-center bg-[#CEC3C3] border-[#CEC3C3] lg:bg-inherit lg:border-0 w-[8vw] h-[8vw]">
+				<div className="border-2 p-[1vw] rounded-sm w-[70%] lg:w-auto flex flex-row justify-center items-center bg-[#CEC3C3] border-[#CEC3C3] lg:bg-inherit lg:border-0 w-[8vw] h-[8vw] lg:max-h-[80px]">
 					<div className="sm:w-[24px] sm:h-[24px]">
 						<picture className="">
 							<source

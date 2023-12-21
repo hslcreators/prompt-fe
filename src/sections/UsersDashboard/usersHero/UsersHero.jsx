@@ -25,20 +25,21 @@ const UsersHero = () => {
 						alt="A left arrow"
 					/>
 				</div>
-				<div className="vsm:hidden lg:flex flex-row justify-between font-normal mt-[40px] pb-[30px]">
+				<div className="sm:text-[18px] flex flex-row justify-between font-normal vsm:mt-[8vw] mt-[40px]">
 					<div>Categories</div>
-					<button className="text-[#524ECA] flex flex-row  lg:text-[10px] xl:text-[15px] underline">View All</button>
+					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[10px] xl:text-[15px] underline">View All</button>
 				</div>
-				<div className="mb-[40px] flex flex-row flex-wrap content-center justify-center gap-x-[2vw] gap-y-[4vw] nsm:gap-x-[1.5vw]  lg:gap-y-[3vw]">
+				<div className="mb-[40px] vsm:mb-[8vw] mt-[30px] flex flex-row flex-wrap content-center justify-center gap-x-[2vw] gap-y-[4vw] nsm:gap-x-[1.5vw]  lg:gap-y-[3vw]">
+					<VendorCard />
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
 				</div>
-				<div className="vsm:hidden lg:flex flex-row justify-between font-normal">
+				<div className="vsm:fhidden flex flex-row justify-between font-normal sm:text-[18px]">
 					<div>Vendors</div>
-					<button className="text-[#524ECA] flex flex-row  lg:text-[10px] xl:text-[15px] underline">View All</button>
+					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[10px] xl:text-[15px] underline">View All</button>
 				</div>
 			</div>
 		</React.Fragment>
