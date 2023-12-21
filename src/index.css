@@ -7,3 +7,37 @@
 body {
 	font-family: "Roboto", sans-serif;
 }
+
+.dotted {
+	background-image: url("/public/assets/icons/border.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+
+/* Unselectble Images */
+img {
+	pointer-events: none;
+	user-select: none;
+}
+
+/* Remove Input Styles */
+button:hover,
+button:focus {
+	outline: none;
+}
+
+input:hover,
+input:focus,
+input:active {
+	outline: none;
+}
+
+textarea {
+	overflow: auto;
+	outline: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	resize: none; /*remove the resize handle on the bottom right*/
+}
