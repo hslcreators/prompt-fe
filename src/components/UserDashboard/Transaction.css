@@ -1,0 +1,152 @@
+/*Transactions.css*/
+.Shibuya{
+    position: absolute;
+    left: 150px;
+    top: 300px; 
+    border: solid 3px rgb(252, 249, 249);
+    padding-top: 104px; 
+    padding-left: 40px;
+    padding-right: 400px;
+    padding-bottom: 400px;
+}
+.seye {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-align: left;
+    width: 450px;
+    top: 80px;
+    left: 150px;
+}
+.rollo img {
+    position: absolute;
+    left: 125px;
+    top: 83px;
+}
+.tick img {
+    position: absolute;
+    top: 90px;
+    left: 200px;
+}
+.yolo  {
+    position: absolute;
+    font-weight: bolder;
+    width: 350px;
+    height: 610px;
+    top: -50px;
+    left: -90px;
+}
+.yolo .rollo {
+    margin: 20px;
+    padding: 100px;
+    text-align: center;
+    width: 133px;
+    height: 28px;
+}
+.morocco {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    top: 160px;
+    left: 150px;
+}
+.germany {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    top: 180px;
+    left: 170px;
+}
+.croatia {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    top: 220px;
+}
+.number {
+    position: absolute;
+    left: 170px;
+    left: 280px;
+}
+.time {
+    position: absolute;
+    top: 260px;
+}
+.method {
+    position: absolute;
+    width: 200px;
+    left: 40px;
+    top: 300px;
+}
+.iraq {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    top: 260px;
+    left: 240px;
+}
+.new {
+    position: absolute;
+    top: 300px;
+    left: 280px;
+} 
+.old {
+    position: absolute;
+    top: 420px;
+    left: 330px;
+
+}
+.niger {
+    position: absolute;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    top: 340px;
+}
+.chad {
+    position: absolute;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    top: 340px;
+    left: 265px;
+}
+.cruise {
+    position: absolute;
+    top: 420px;
+}
+.lemnos{
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+    background-color: #23a23d;
+    z-index: 1;
+    opacity: 0.3;
+    position: absolute;
+    right: -11px;
+    top: 122px;
+}
