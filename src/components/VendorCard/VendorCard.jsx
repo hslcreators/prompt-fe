@@ -22,7 +22,7 @@ const VendorCard = () => {
 					<img
 						className="w-full h-full object-cover"
 						src={ratings}
-						alt="A card icon"
+						alt="A rating icon"
 					/>
 				</div>
 			</div>
