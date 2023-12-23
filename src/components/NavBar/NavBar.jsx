@@ -5,13 +5,16 @@ const NavBar = () => {
 		<div className="n-wrapper">
 			<div className="n-left">
 				<div className="n-logo">
-					<img></img>
+					<img
+						src="/public/assets/images/header logo.svg"
+						alt="header-logo"
+					></img>
 				</div>
 			</div>
 			<div className="n-right">
 				<div className="n-list">
 					<ul>
-						<li>ABOUT</li>
+						<li>About</li>
 						<li>FAQ</li>
 					</ul>
 				</div>
