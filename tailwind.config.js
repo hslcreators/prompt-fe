@@ -8,8 +8,9 @@ export default {
 			nsm: "600px",
 			md: "424px",
 			lg: "565px",
-			nxl: "800px",
-			xl: "1110px",
+			alg: "700px",
+			nxl: "894px",
+			xl: "1100px",
 		},
 
 		extend: {

@@ -20,16 +20,16 @@ const UsersHero = () => {
 				<div className="vsm:text-[2.2vw] lg:text-[8px] xl:text-[12px]">Take one step at a time</div>
 				<div className="w-100% max-w-[1048px] h-100%  ">
 					<img
-						className="w-full h-full object-cover"
+						className="w-full h-full object-cover rounded-lg"
 						src={megaSale}
 						alt="A left arrow"
 					/>
 				</div>
-				<div className="sm:text-[18px] flex flex-row justify-between font-normal vsm:mt-[8vw] lg:mt-[60px]">
+				<div className="vsm:text-[3.5vw] sm:text-[18px] flex flex-row justify-between font-normal vsm:mt-[7vw] lg:mt-[60px]">
 					<div>Categories</div>
-					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[10px] xl:text-[15px] underline">View All</button>
+					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[11px] xl:text-[15px] underline">View All</button>
 				</div>
-				<div className="lg:mb-[60px] vsm:mb-[8vw] mt-[30px] flex flex-row flex-wrap content-center justify-center gap-x-[2vw] gap-y-[4vw] nsm:gap-x-[1.5vw]  lg:gap-y-[3vw]">
+				<div className="lg:mb-[60px] vsm:mb-[8vw] vsm:mt-[6vw] mt-[30px] flex flex-row flex-wrap content-center justify-center gap-x-[4.5vw] gap-y-[4.5vw] nxl:gap-x-[3vw] xl:gap-x-[1.5vw]">
 					<VendorCard />
 					<VendorCard />
 					<VendorCard />
@@ -39,9 +39,9 @@ const UsersHero = () => {
 						<VendorCard />
 					</div>
 				</div>
-				<div className="vsm:fhidden flex flex-row justify-between font-normal sm:text-[18px]">
+				<div className="flex flex-row justify-between font-normal vsm:text-[3.5vw] sm:text-[18px]">
 					<div>Vendors</div>
-					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[10px] xl:text-[15px] underline">View All</button>
+					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[11px] xl:text-[15px] underline">View All</button>
 				</div>
 			</div>
 		</React.Fragment>
