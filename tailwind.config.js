@@ -9,7 +9,7 @@ export default {
 			md: "424px",
 			lg: "565px",
 			alg: "700px",
-			nxl: "800px",
+			nxl: "894px",
 			xl: "1100px",
 		},
 
