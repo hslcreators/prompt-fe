@@ -115,20 +115,46 @@ const Hero = () => {
 					</section>
 				</section>
 
-				<footer>
-					<div>
-						<img src="/public/assets/images/footer logo.jpg"></img>
-						<ul>
-							<li>
-								<img src="/public/assets/icons/sms.png" />
-							</li>
-							<li>
-								<img />
-							</li>
-							<li>
-								<img />
-							</li>
-						</ul>
+				<footer className="footer">
+					<div className="footer-logo">
+						<img
+							src="/public/assets/images/footer logo.jpg"
+							alt="footer-logo"
+						/>
+						<h3 className="About-us">About Us</h3>
+						<h3 className="Terms">Terms of Use</h3>
+					</div>
+					<div className="email">
+						<img
+							src="/public/assets/icons/sms.png"
+							alt="email-icon"
+						/>
+						<p className="icon-text">help@printhub.com</p>
+
+						<h3 className="career">Career</h3>
+						<h3 className="privacy">Privacy Policy</h3>
+					</div>
+					<img
+						src="/public/assets/icons/messages.png"
+						alt="messages-icon"
+					/>
+					<div className="reminder">
+						<img
+							src="/public/assets/icons/clock.png"
+							alt="reminder"
+							className="clock"
+						/>
+						<p className="icon-text">Mon-Sun 8:am-9:pm</p>
+						<div className="instagram-twitter-icons">
+							<img
+								src="/public/assets/icons/ig icon.png"
+								alt="instagram-icon"
+							/>
+							<img
+								src="/public/assets/icons/twitter icon.png"
+								alt="twitter-icon"
+							/>
+						</div>
 					</div>
 				</footer>
 			</div>
