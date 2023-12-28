@@ -1,0 +1,42 @@
+.n-wrapper {
+	height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid grey;
+}
+n-left {
+	flex: 1;
+	align-items: center;
+	display: flex;
+	gap: 2rem;
+}
+
+.n-right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 30rem;
+}
+.n-list {
+	flex: 10;
+	color: #23262f;
+
+	font-family: Roboto;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.64px;
+}
+.n-list > ul {
+	display: flex;
+	gap: 2rem;
+}
+.button {
+	justify-content: left;
+	align-items: self-end;
+	margin-left: 100px;
+}
+img {
+	margin-left: 20px;
+}

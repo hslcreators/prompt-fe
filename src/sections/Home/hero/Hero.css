@@ -2,3 +2,243 @@
 	font-weight: 700;
 	font-size: 3rem;
 }
+.homepage {
+	max-width: 1440px;
+	max-height: 3717px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.section1 {
+	background-color: #ffffff;
+	width: fit-content;
+	height: 600px;
+	display: flex;
+	justify-content: space-between;
+}
+.text1 {
+	width: 721px;
+	height: 282px;
+	font-weight: 500;
+	font-size: 100px;
+	font-family: "Montagu Slab", serif;
+	color: #23262f;
+	line-height: 141.02px;
+}
+.text2 {
+	width: 784px;
+	height: 127px;
+	font-weight: 400px;
+	font-size: 20px;
+	color: #23262f;
+	font-family: "Roboto Slab", serif;
+}
+#print-image {
+	width: 450px;
+	height: 600px;
+}
+.start {
+	width: 247px;
+	height: 70px;
+	padding: 25px, 72px, 25px, 72px;
+	background-color: #054c73;
+	color: #ffffff;
+	border-radius: 10px;
+}
+.start:hover {
+	font-size: larger;
+	opacity: 0.8;
+	transition: 0.2s;
+}
+
+.section2 {
+	background-color: #f3f0ca;
+	width: fit-content;
+	height: fit-content;
+}
+
+.section2-top,
+.section3-top {
+	font-size: 50px;
+	font-weight: 500;
+	font-family: "Montagu Slab", serif;
+	text-align: center;
+	padding-top: 80px;
+	color: #23262f;
+}
+#question-mark {
+	width: 702px;
+	height: 819px;
+}
+
+.section2-body {
+	display: flex;
+}
+.subhead {
+	font-family: "Montagu Slab", serif;
+	color: #000;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.8px;
+	padding-top: 70px;
+}
+.explain {
+	color: #23262f;
+	font-family: "Montagu Slab", serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.52px;
+	width: 541px;
+}
+
+.section3 {
+	width: fit-content;
+	height: 800px;
+	background-color: #fff;
+}
+.section3-top {
+	text-align: left;
+}
+.section3-body,
+.section4-body {
+	display: flex;
+	justify-content: space-between;
+}
+.box1,
+.box2 {
+	width: 370px;
+	height: 500px;
+	flex-shrink: 0;
+	border-radius: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.9);
+	margin-top: 30px;
+}
+.box2 {
+	margin-left: 60%;
+}
+
+.section4 {
+	width: 3000;
+	height: 200px;
+	flex-shrink: 0;
+	background-color: #f3f0ca;
+}
+.newsletter {
+	font-family: "Saira", sans-serif;
+	color: #23262f;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 135%; /* 48.6px */
+	padding-top: 30px;
+	padding-left: 50px;
+	width: 620px;
+}
+.deals {
+	color: #23262f;
+	font-family: "Saira", sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%; /* 20px */
+	padding-top: 30px;
+	padding-left: 50px;
+}
+input {
+	width: 300px;
+	height: 60px;
+	border-radius: 8px;
+	background: #fff;
+	flex-direction: column;
+	justify-content: left;
+	margin-top: 20%;
+	margin-right: 20px;
+	font-family: "Saira", sans-serif;
+	flex-shrink: 0;
+}
+
+button {
+	border-radius: 8px;
+	background: #054c73;
+	margin-right: 40px;
+	width: 152px;
+	height: 60px;
+	color: #fff;
+	font-family: "Saira", sans-serif;
+	flex-shrink: 0;
+}
+.footer {
+	width: 1440px;
+	height: 321px;
+	flex-shrink: 0;
+	background: #23262f;
+	padding: 15px;
+	padding-left: 40px;
+	padding-right: 50px;
+	color: #fff;
+}
+
+.email,
+.reminder,
+.instagram-twitter-icons,
+.footer-logo {
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	flex-shrink: 0;
+}
+.clock {
+	height: 29px;
+	flex-shrink: 0;
+}
+.icon-text {
+	margin-left: 25px;
+	font-weight: 400;
+	font-family: "Montagu Slab", serif;
+	font-size: 22px;
+	line-height: 28px;
+	font-style: normal;
+	color: #fff;
+	line-height: 28px;
+}
+.career,
+.instagram-twitter-icons {
+	margin-left: 10em;
+	color: #fff;
+	font-family: "Montagu Slab", serif;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+}
+.privacy {
+	margin-left: 5em;
+	color: #fff;
+	font-family: "Montagu Slab", serif;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+}
+.About-us {
+	margin-left: 13em;
+	color: #fff;
+	font-family: "Montagu Slab", serif;
+	font-size: 29px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+}
+.Terms {
+	margin-left: 4em;
+	color: #fff;
+	font-family: "Montagu Slab", serif;
+	font-size: 29px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+}
+/* the texts have different css properties, that is why i geave them different css values */
