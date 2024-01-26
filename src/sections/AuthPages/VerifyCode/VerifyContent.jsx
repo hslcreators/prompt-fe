@@ -66,7 +66,7 @@ const VerifyContent = () => {
 					<p className="forgot">Resend Code</p>
 				</div>
 				<button
-					onClick={() => navigate("/")}
+					onClick={() => navigate("/user-dashboard")}
 					className="submit-btn"
 				>
 					Verify
