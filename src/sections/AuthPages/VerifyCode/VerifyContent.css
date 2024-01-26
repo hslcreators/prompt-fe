@@ -1,0 +1,62 @@
+.verify-content{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.verify-content .heading{
+    max-width: 460px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.verify-content .heading p{
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+.verify-content .pin-input{
+    width: 90%;
+    max-width: 400px;
+    height: 50px;
+    display: flex;
+    /* background: blanchedalmond; */
+}
+
+.verify-content .form-bottom{
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.verify-content .pin-input input {
+    width:  calc( 95% / 6 );
+    height: 100%;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgba(88, 88, 88, 0.15),
+    0 3px 6px rgba(96, 96, 96, 0.15);
+    outline: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.verify-content .pin-input input.focus{
+    border: 3px solid #524ECA;
+}
+
+.verify-content .pin-input input::-webkit-outer-spin-button,
+.verify-content .pin-input input::-webkit-inner-spin-button{
+    display: none;
+}
+
+.verify-content .submit-btn{
+    width: 90%;
+    max-width: 400px;
+}
