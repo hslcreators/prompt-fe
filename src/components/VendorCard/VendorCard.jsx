@@ -1,10 +1,10 @@
-import React from "react";
-import card from "../../../public/assets/images/printingStand.png";
+import { Link } from "react-router-dom";
 import ratings from "../../../public/assets/icons/ratings.svg";
+import card from "../../../public/assets/images/printingStand.png";
 
 const VendorCard = () => {
 	return (
-		<React.Fragment>
+		<Link to="/vendor-profile">
 			<div className="flex flex-col text-[2.65vw] lg:text-[13px] select-none">
 				<button className="w-[29vw] h-[22vw] lg:max-w-[155px] alg:max-w-[185px] lg:max-h-[130px] nxl:max-w-[159px] nxl:max-h-[130px]">
 					<img
@@ -26,7 +26,7 @@ const VendorCard = () => {
 					/>
 				</div>
 			</div>
-		</React.Fragment>
+		</Link>
 	);
 };
 

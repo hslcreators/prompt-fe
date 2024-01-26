@@ -10,15 +10,15 @@ const router = createBrowserRouter([
 		element: <Home />,
 	},
 	{
-		path: "/VendorsPage", // Vendors Page
+		path: "/vendors", // Vendors Page
 		element: <VendorsPage />,
 	},
 	{
-		path: "/UsersDahboard", // Users Dashboard Page
+		path: "/user-dashboard", // Users Dashboard Page
 		element: <UsersDashboards />,
 	},
 	{
-		path: "/VendorsProfile", // Vendors Profile Page
+		path: "/vendor-profile", // Vendors Profile Page
 		element: <VendorsProfile />,
 	},
 ]);
