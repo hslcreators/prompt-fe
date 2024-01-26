@@ -6,6 +6,9 @@ import SignUp from "@pages/signup";
 import CreatePassword from "@pages/createPassword";
 import ForgotPassword from "@pages/forgotPassword";
 import VerifyCode from "@pages/verifyCode";
+import VendorsPage from "@pages/vendorsPage";
+import UsersDashboards from "@pages/usersDashboard";
+import VendorsProfile from "@pages/vendorsProfile";
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +38,18 @@ const router = createBrowserRouter([
 	{
 		path: "/verify",
 		element: <VerifyCode />,
+	},
+	{
+		path: "/vendors", // Vendors Page
+		element: <VendorsPage />,
+	},
+	{
+		path: "/user-dashboard", // Users Dashboard Page
+		element: <UsersDashboards />,
+	},
+	{
+		path: "/vendor-profile", // Vendors Profile Page
+		element: <VendorsProfile />,
 	},
 ]);
 
