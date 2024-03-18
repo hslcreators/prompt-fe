@@ -5,7 +5,7 @@ import googleImg from "/assets/images/google.png";
 const LoginContent = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="login-content lc">
+		<div className="login-content lc page-content">
 			<div className="heading">
 				<h1>Login to your Account</h1>
 				<p>Login with your details</p>

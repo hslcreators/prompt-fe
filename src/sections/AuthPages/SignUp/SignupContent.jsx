@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const SignUpContent = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="login-content signup-content">
+		<div className="login-content signup-content page-content">
 			<div className="heading">
 				<h1>Create Account</h1>
 				<p>Start your journey with us today!</p>

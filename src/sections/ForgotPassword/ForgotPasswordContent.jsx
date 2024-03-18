@@ -4,7 +4,7 @@ import "./ForgotPassoword.css";
 const ForgotPasswordContent = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="forgot-content">
+		<div className="forgot-content page-content">
 			<div className="heading">
 				<h1>Forgot Password?</h1>
 				<p>Enter your account details</p>
