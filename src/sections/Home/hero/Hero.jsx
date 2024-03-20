@@ -93,8 +93,68 @@ const Hero = () => {
 					<div className="section3-top">
 						<h2>Featured Vendors</h2>
 						<div className="section3-body">
-							<div className="box1"></div>
-							<div className="box2"></div>
+							<div className="box1">
+								<img
+									className="female-vendor"
+									src="/public/assets/images/female vendor.png"
+									alt="female vendor"
+								/>
+								<div className="vendor-details">
+									<h5>Alao Grace</h5>
+									<p> &#8358; 20</p>
+								</div>
+								<div className="location">
+									<img
+										src="/public/assets/icons/location.jpg"
+										alt="location-icon"
+									></img>
+									<p>Lydia hall, Room 203 </p>
+								</div>
+								<div className="status">
+									<img
+										src="/public/assets/icons/online.jpg"
+										alt="online-image"
+									></img>
+									<p>Online</p>
+								</div>
+								<div className="ratings">
+									<img
+										src="/assets/images/2 stars.png"
+										alt="rating-stars"
+									></img>
+								</div>
+							</div>
+							<div className="box2">
+								<img
+									className="male-vendor"
+									src="/public/assets/images/male vendor.png"
+									alt="male-vendor"
+								></img>
+								<div className="vendor-details">
+									<h5>Alao Grace</h5>
+									<p> &#8358; 20</p>
+								</div>
+								<div className="location">
+									<img
+										src="/assets/icons/location.jpg"
+										alt="location-icon"
+									></img>
+									<p>Lydia hall, Room 203 </p>
+								</div>
+								<div className="status">
+									<img
+										src="/assets/icons/offline.jpg"
+										alt="offline-image"
+									></img>
+									<p>Offline</p>
+								</div>
+								<div className="ratings">
+									<img
+										src="/assets/images/3 stars.png"
+										alt="rating-stars"
+									></img>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>

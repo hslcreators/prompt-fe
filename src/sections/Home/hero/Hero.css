@@ -74,6 +74,7 @@
 .section2-body {
 	display: flex;
 }
+
 .subhead {
 	font-family: "Montagu Slab", serif;
 	color: #000;
@@ -117,8 +118,70 @@
 	border: 1px solid rgba(0, 0, 0, 0.9);
 	margin-top: 30px;
 }
+.female-vendor,
+.male-vendor {
+	padding: 0;
+	height: 6em;
+	width: 6em;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vendor-details {
+	display: flex;
+	margin-left: 1rem;
+	margin-right: 0.5rem;
+}
+.vendor-details > h5 {
+	color: #000;
+
+	font-family: "Montagu Slab";
+	font-size: 2rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.045rem;
+	margin-top: 1rem;
+}
+.vendor-details > p {
+	color: #000;
+
+	font-family: "Montagu Slab";
+	font-size: 1.2rem;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.025rem;
+	/* justify-content: space-between; */
+	margin-left: 5rem;
+	margin-top: 1rem;
+}
 .box2 {
 	margin-left: 60%;
+}
+.location,
+.status {
+	display: flex;
+	margin-bottom: 0.5rem;
+}
+.location > p,
+.status > p {
+	color: rgba(0, 0, 0, 0.8);
+
+	font-family: "Montagu Slab";
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.03rem;
+}
+.ratings {
+	display: flex;
+}
+.ratings > img {
+	width: 7rem;
+	align-content: center;
 }
 
 .section4 {
@@ -241,4 +304,5 @@ button {
 	font-weight: 400;
 	line-height: 28px;
 }
+
 /* the texts have different css properties, that is why i geave them different css values */
