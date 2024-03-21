@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "@pages/Home";
+import Home from "@pages/home";
 import FileUpload from "@pages/fileUpload";
-import Login from "@pages/Login";
+import Login from "@pages/login";
 import SignUp from "@pages/signup";
 import CreatePassword from "@pages/createPassword";
 import ForgotPassword from "@pages/forgotPassword";
