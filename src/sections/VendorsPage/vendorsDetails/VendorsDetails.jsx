@@ -1,9 +1,4 @@
 import React from "react";
-import userProfile from "../../../../public/assets/images/userProfile.png";
-import left from "../../../../public/assets/icons/left.svg";
-import message from "../../../../public/assets/images/message.png";
-import userProfileBg from "../../../../public/assets/images/userProfileBg.png";
-import ratings from "../../../../public/assets/icons/ratings.svg";
 import { useNavigate } from "react-router-dom";
 
 const VendorsDetails = () => {
@@ -14,14 +9,14 @@ const VendorsDetails = () => {
 				<div className="w-[5.2vw] my-[3vw]  lg:mt-[1vw] lg:mb-[3vw] lg:w-[24px] lg:h-[24px]">
 					<img
 						className="w-full h-full object-cover"
-						src={left}
+						src="/assets/icons/left.svg"
 						alt="A left arrow"
 					/>
 				</div>
 				<div className="w-100% max-w-[1048px]">
 					<img
 						className="w-full h-full object-cover rounded-lg"
-						src={userProfileBg}
+						src="/assets/images/userProfileBg.png"
 						alt="A left arrow"
 					/>
 				</div>
@@ -29,14 +24,14 @@ const VendorsDetails = () => {
 					<div className="w-[10vw] h-[10vw] relative bottom-[6vw] left-[2vw]">
 						<img
 							className="w-full h-full object-cover"
-							src={userProfile}
+							src="/assets/images/userProfile.png"
 							alt="A user profile icon"
 						/>
 					</div>
 					<div className="w-[6vw] h-[6vw] relative bottom-[3vw]">
 						<img
 							className="w-full h-full object-cover"
-							src={message}
+							src="/assets/images/message.png"
 							alt="A message icon"
 						/>
 					</div>
@@ -48,7 +43,7 @@ const VendorsDetails = () => {
 					<div className="w-[20vw] h-[4vw] max-w-[144px] max-h-[24px] lg:relative right-[4px]">
 						<img
 							className="w-full h-full object-cover"
-							src={ratings}
+							src="/assets/icons/ratings.svg"
 							alt="A card icon"
 						/>
 					</div>

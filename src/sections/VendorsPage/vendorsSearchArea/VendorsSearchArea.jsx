@@ -1,8 +1,4 @@
 import React from "react";
-import imageUsr from "../../../../public/assets/images/imageUsr.png";
-import avatarMob from "../../../../public/assets/images/avatarMob.png";
-import bell from "../../../../public/assets/icons/bell.svg";
-import bellMob from "../../../../public/assets/icons/bellMob.svg";
 
 const VendorsSearchArea = () => {
 	return (
@@ -22,10 +18,10 @@ const VendorsSearchArea = () => {
 									<source
 										className=""
 										media="(min-width: 565px)"
-										srcSet={imageUsr}
+										srcSet="/assets/images/imageUsr.png"
 									/>
 									<img
-										src={avatarMob}
+										src="/assets/images/avatarMob.png"
 										alt="A user avatar"
 										className="w-full h-full object-cover rounded-full"
 									/>
@@ -38,10 +34,10 @@ const VendorsSearchArea = () => {
 									<source
 										className=""
 										media="(min-width: 565px)"
-										srcSet={bell}
+										srcSet="/assets/icons/bell.svg"
 									/>
 									<img
-										src={bellMob}
+										src="/assets/icons/bellMob.svg"
 										alt="A notification svg"
 										className="w-full h-full object-cover rounded-full"
 									/>

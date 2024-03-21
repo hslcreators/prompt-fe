@@ -1,6 +1,4 @@
 import React from "react";
-import wave from "../../../../public/assets/icons/wave.svg";
-import megaSale from "../../../../public/assets/images/megaSale.png";
 import VendorCard from "@components/VendorCard/VendorCard";
 
 const UsersHero = () => {
@@ -12,7 +10,7 @@ const UsersHero = () => {
 					<div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]">
 						<img
 							className="w-full h-full object-cover"
-							src={wave}
+							src="/assets/icons/wave.svg"
 							alt="A left arrow"
 						/>
 					</div>
@@ -21,7 +19,7 @@ const UsersHero = () => {
 				<div className="w-100% max-w-[1048px] h-100%  ">
 					<img
 						className="w-full h-full object-cover rounded-lg"
-						src={megaSale}
+						src="/assets/images/megaSale.png"
 						alt="A left arrow"
 					/>
 				</div>
@@ -30,11 +28,9 @@ const UsersHero = () => {
 					<button className="text-[#524ECA] flex flex-row sm:text-[14px] lg:text-[11px] xl:text-[15px] underline">View All</button>
 				</div>
 				<div className="lg:mb-[60px] vsm:mb-[8vw] vsm:mt-[6vw] mt-[30px] flex flex-row flex-wrap content-center justify-center gap-x-[4.5vw] gap-y-[4.5vw] nxl:gap-x-[3vw] xl:gap-x-[1.5vw]">
-					<VendorCard />
-					<VendorCard />
-					<VendorCard />
-					<VendorCard />
-					<VendorCard />
+					{Array.from("works").map((item) => (
+						<VendorCard key={item} />
+					))}
 					<div className="lg:hidden">
 						<VendorCard />
 					</div>

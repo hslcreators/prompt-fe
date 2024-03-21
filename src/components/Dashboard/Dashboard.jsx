@@ -1,11 +1,8 @@
-import React from "react";
-import dashboard from "../../../public/assets/icons/dashboard.svg";
-import dashboardMob from "../../../public/assets/icons/dashboardMob.svg";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
 	return (
-		<React.Fragment>
+		<>
 			<Link
 				to="/user-dashboard"
 				className="flex flex-row gap-[1.1vw] justify-center lg:justify-normal"
@@ -15,10 +12,10 @@ const Dashboard = () => {
 						<source
 							className=""
 							media="(min-width: 565px)"
-							srcSet={dashboard}
+							srcSet="/assets/icons/dashboard.svg"
 						/>
 						<img
-							src={dashboardMob}
+							src="/assets/icons/dashboardMob.svg"
 							alt="A dashboard icon"
 							className="w-full h-full object-cover"
 						/>
@@ -26,7 +23,7 @@ const Dashboard = () => {
 				</div>
 				<div className="hidden lg:block text-[#242424] font-Roboto text-[2.2vw] nxl:text-[18px] font-medium relative nxl:bottom-[4px]">Dashboard</div>
 			</Link>
-		</React.Fragment>
+		</>
 	);
 };
 

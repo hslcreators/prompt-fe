@@ -9,7 +9,7 @@ module.exports = {
 	rules: {
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "off",
-		"react/jsx-fragments": ["error", "syntax"], //  Enforces the use of fragments
+		// "react/jsx-fragments": ["error", "syntax"], //  Removed the rule to make it Easier
 		"prettier/prettier": ["error", { endOfLine: "auto", useTabs: true }, { usePrettierrc: true }],
 		"react/jsx-no-undef": ["error"], // warns when a variable or function is used without being defined in a JSX expression.
 		"react-hooks/rules-of-hooks": "error",

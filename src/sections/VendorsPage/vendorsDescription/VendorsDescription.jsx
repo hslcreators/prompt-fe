@@ -1,7 +1,5 @@
 import React from "react";
 
-import userDesc from "../../../../public/assets/images/userDescription.png";
-
 const VendorsDescription = () => {
 	return (
 		<React.Fragment>
@@ -14,21 +12,21 @@ const VendorsDescription = () => {
 					<div className="nxl:max-w-[285px]">
 						<img
 							className="w-full h-full object-cover"
-							src={userDesc}
+							src="/assets/images/userDescription.png"
 							alt="A userDesc icon"
 						/>
 					</div>
 					<div className="nxl:max-w-[285px]">
 						<img
 							className="w-full h-full object-cover"
-							src={userDesc}
+							src="/assets/images/userDescription.png"
 							alt="A userDesc icon"
 						/>
 					</div>
 					<div className="nxl:max-w-[285px]">
 						<img
 							className="w-full h-full object-cover"
-							src={userDesc}
+							src="/assets/images/userDescription.png"
 							alt="A userDesc icon"
 						/>
 					</div>

@@ -1,8 +1,4 @@
 import React from "react";
-import avatar from "../../../public/assets/images/avatar.png";
-import avatarMob from "../../../public/assets/images/avatarMob.png";
-import back from "../../../public/assets/icons/back.svg";
-import backMob from "../../../public/assets/icons/backMob.svg";
 
 const UserProfile = () => {
 	return (
@@ -13,10 +9,10 @@ const UserProfile = () => {
 						<source
 							className=""
 							media="(min-width: 565px)"
-							srcSet={avatar}
+							srcSet="/assets/images/avatar.png"
 						/>
 						<img
-							src={avatarMob}
+							src="/assets/images/avatarMob.png"
 							alt="A user avatar"
 							className="w-full h-full object-cover"
 						/>
@@ -31,10 +27,10 @@ const UserProfile = () => {
 							<source
 								className=""
 								media="(min-width: 565px)"
-								srcSet={back}
+								srcSet="/assets/icons/back.svg"
 							/>
 							<img
-								src={backMob}
+								src="/assets/icons/backMob.svg"
 								alt="An exit icon"
 								className="w-full h-full object-cover"
 							/>

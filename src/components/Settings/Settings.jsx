@@ -1,5 +1,4 @@
 import React from "react";
-import settings from "../../../public/assets/icons/settings.svg";
 
 const Settings = () => {
 	return (
@@ -8,7 +7,7 @@ const Settings = () => {
 				<div className="lg:w-[18px] lg:h-[18px]">
 					<img
 						className="w-full h-full object-cover"
-						src={settings}
+						src="/assets/icons/settings.svg"
 						alt="A settings icon"
 					/>
 				</div>

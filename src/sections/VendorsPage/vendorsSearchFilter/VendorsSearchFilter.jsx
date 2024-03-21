@@ -1,6 +1,4 @@
 import React from "react";
-import left from "../../../../public/assets/icons/left.svg";
-import down from "../../../../public/assets/icons/downArrow.svg";
 
 const VendorsSearchFilter = () => {
 	return (
@@ -10,7 +8,7 @@ const VendorsSearchFilter = () => {
 					<div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]">
 						<img
 							className="w-full h-full object-cover"
-							src={left}
+							src="/assets/icons/left.svg"
 							alt="A left arrow"
 						/>
 					</div>
@@ -30,7 +28,7 @@ const VendorsSearchFilter = () => {
 						<div className="lg:w-[18px] lg:h-[18px] relative top-[2px] xl:top-[7px] ml-[10px]">
 							<img
 								className="w-full h-full object-cover"
-								src={down}
+								src="/assets/icons/downArrow.svg"
 								alt="A down arrow"
 							/>
 						</div>

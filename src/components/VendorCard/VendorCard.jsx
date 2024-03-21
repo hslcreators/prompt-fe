@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import ratings from "../../../public/assets/icons/ratings.svg";
-import card from "../../../public/assets/images/printingStand.png";
 
 const VendorCard = () => {
 	return (
@@ -9,7 +7,7 @@ const VendorCard = () => {
 				<button className="w-[29vw] h-[22vw] lg:max-w-[155px] alg:max-w-[185px] lg:max-h-[130px] nxl:max-w-[159px] nxl:max-h-[130px]">
 					<img
 						className="w-full h-full object-cover rounded-lg"
-						src={card}
+						src="/assets/images/printingStand.png"
 						alt="A card icon"
 					/>
 				</button>
@@ -21,7 +19,7 @@ const VendorCard = () => {
 				<div className="w-[10vw] h-[2vw] max-w-[124px] max-h-[24px] lg:relative right-[4px]">
 					<img
 						className="w-full h-full object-cover"
-						src={ratings}
+						src="/assets/icons/ratings.svg"
 						alt="A rating icon"
 					/>
 				</div>
