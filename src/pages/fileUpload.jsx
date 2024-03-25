@@ -6,11 +6,12 @@ import { useState } from "react";
 
 const FileUpload = () => {
 	const [page, setPage] = useState("file-upload");
+
 	return (
 		<PageContainer>
-			<Container className="mt-8">
+			<Container>
 				<FileUploadNav
-					page={page}
+					currentPage={page}
 					setPage={setPage}
 				/>
 				<FileUploadForm />

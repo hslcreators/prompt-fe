@@ -1,10 +1,18 @@
 import { CircularProgressBar } from "@tomickigrzegorz/react-circular-progress-bar";
+import { AnimatePresence, motion } from "framer-motion";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
-const ProgressBar = ({ config, setIsOpen, isOpen }) => {
-	const navigate = useNavigate();
+const ProgressBar = ({ config, setIsOpen, isOpen, setConfig }) => {
+	// const navigate = useNavigate();
+
+	const closeModal = () => {
+		setConfig((prev) => {
+			console.log(prev);
+			return { ...prev, percent: 0 };
+		});
+		setIsOpen(false);
+		console.log(config);
+	};
 
 	if (!isOpen) return null;
 	return createPortal(
@@ -14,20 +22,20 @@ const ProgressBar = ({ config, setIsOpen, isOpen }) => {
 		>
 			<dialog
 				open
-				className="w-[654px] h-[473px] bg-white rounded-2xl -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex flex-col justify-center items-center"
+				className="lg:w-[654px] w-[90%] h-[70%] lg:h-[473px] bg-white rounded-2xl -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex flex-col justify-center items-center px-6"
 			>
 				<button
-					className="absolute top-8 right-10"
-					onClick={() => setIsOpen(false)}
+					className="absolute top-5 right-5"
+					onClick={() => closeModal()}
 				>
 					<img
-						className="w-full h-full object-cover"
+						className="w-4 h-4 sm:w-full sm:h-full object-cover"
 						src="/assets/icons/close.svg"
 						alt="close button"
 					/>
 				</button>
 				<AnimatePresence>
-					{config?.percent <= 100 ? (
+					{config?.percent < 100 ? (
 						<motion.div
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
@@ -55,7 +63,7 @@ const ProgressBar = ({ config, setIsOpen, isOpen }) => {
 							transition={{ delay: 2 }}
 							className="flex flex-col items-center w-full"
 						>
-							<div className="w-[143px] h-full">
+							<div className="lg:w-[143px] w-[90px] sm:w-[120px] h-full">
 								<img
 									className="object-cover"
 									src="/assets/icons/success.svg"
@@ -66,7 +74,7 @@ const ProgressBar = ({ config, setIsOpen, isOpen }) => {
 								Your document has been uploaded <br /> successfully
 							</p>
 							<button
-								onClick={() => navigate("/")}
+								onClick={() => closeModal()}
 								className="max-w-[408px] mt-11 w-full bg-[#524ECA] uppercase text-white tracking-[0.64px] font-bold rounded-lg py-3 px-6"
 							>
 								Proceed to Payment
