@@ -21,6 +21,7 @@ const config = {
 };
 
 const FileUploadForm = () => {
+	// Fixed Deployment Issues
 	const icons = ["excelIcon", "pdfIcon", "wordIcon"];
 	const fileInputRef = useRef(null);
 	const uploadContainerRef = useRef(null);
