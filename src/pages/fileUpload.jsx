@@ -2,6 +2,8 @@ import Container from "@components/Container/Container";
 import FileUploadForm from "@components/FileUpload/FileUploadForm/FileUploadForm";
 import FileUploadNav from "@components/FileUpload/Nav/FileUploadNav";
 import PageContainer from "@components/PageContainer/PageContainer";
+import PaymentForm from "@components/Payment/PaymentForm";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const FileUpload = () => {
@@ -14,7 +16,7 @@ const FileUpload = () => {
 					currentPage={page}
 					setPage={setPage}
 				/>
-				<FileUploadForm />
+				<AnimatePresence>{page == "file-upload" ? <FileUploadForm /> : <PaymentForm />}</AnimatePresence>
 			</Container>
 		</PageContainer>
 	);
