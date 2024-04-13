@@ -9,6 +9,7 @@ import VerifyCode from "@pages/verifyCode";
 import VendorsPage from "@pages/vendorsPage";
 import UsersDashboards from "@pages/usersDashboard";
 import VendorsProfile from "@pages/vendorsProfile";
+import SettingsPage from "@pages/SettingsPage";
 
 const router = createBrowserRouter([
 	{
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
 	{
 		path: "/vendor-profile", // Vendors Profile Page
 		element: <VendorsProfile />,
+	},
+	{
+		path: "/settings", //  Settings Page
+		element: <SettingsPage />,
 	},
 ]);
 

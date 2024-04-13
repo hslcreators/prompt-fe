@@ -1,0 +1,247 @@
+
+.all-orders{
+    width: 100%;
+    overflow-x: hidden;
+    height: 330px;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.my-orders-window .order{
+    width: 95%;
+    max-width: 330px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 60px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-left: 10%;
+    margin-bottom: 20px;
+    border: 1px solid #e8e8e8;
+}
+
+.my-orders-window .order-text{
+    width: calc(100% - 50px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.my-orders-window .order-name,
+.my-orders-window .order-status{
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    overflow: hidden;
+}
+
+.my-orders-window .order h4{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.my-orders-window .order p{
+    font-size: 11px;
+    color: #757575;
+}
+
+.my-orders-window .order-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+}
+
+.cancel-order-btn, .contact-details-window .close-btn{
+    width: 95%;
+    max-width: 330px;
+    height: 40px;
+    border: 1px solid #8d8af4;
+    color: #8d8af4;
+    margin-top: 15px;
+}
+
+
+/* track order */
+
+.track-order-window .time-estimate{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 90px;
+    background: rgba(223, 237, 244);
+}
+
+.time-estimate-text{
+    width: calc(100% - 90px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.time-estimate-text h2{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.time-estimate-text p{
+    font-size: 14px;
+    color: #757575;
+}
+
+.time-estimate-icon{
+    width: 90px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-estimate-icon svg{
+    width: 30px;
+    height: 30px;
+}
+
+.order-tracking{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.track-order-window .tracking-stage{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    /* background: #8d8af4; */
+}
+
+.track-order-window .tracking-stage .stage-symbol{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: gray; */
+}
+
+.tracking-stage .circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #3876BF;
+}
+
+.tracking-stage .line{
+    width: 2px;
+    height: calc(100% - 30px);
+    background: #666;
+}
+
+.tracking-stage .stage-text{
+    width: calc(100% - 100px);
+    height: 100%;
+    /* background: #3876BF; */
+}
+
+.tracking-stage h2{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tracking-stage p.detail{
+    font-size: 13px;
+}
+
+.tracking-stage p.time{
+    font-size: 10px;
+    color: #757575;
+}
+
+.tracking-stage.finished .circle{
+    background: #3876BF;
+}
+
+.tracking-stage.tracking-stage.finished .line{
+    background: #3876BF;
+}
+
+.tracking-stage.last .line{
+    display: none;
+}
+
+.vendor-banner{
+    width: 90%;
+    height: 130px;
+    display: flex;
+    margin-bottom: 30px;
+    flex-shrink: 0;
+    background: #0E0E2C;
+}
+
+.vendor-banner .vendor-image{
+    width: clamp(90px, 35%, 120px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vendor-image img{
+    width: 80%;
+    aspect-ratio: 1;
+}
+
+.vendor-banner .vendor-text{
+    width: auto;
+    height: 100%;
+    /* background: #3876BF; */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.vendor-banner h5{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vendor-banner p.location{
+    font-size: 15px;
+    color: #c0c0c0;
+}
+
+
+.vendor-banner p.tel{
+    font-size: 13px;
+    color: #c0c0c0;
+}
+
+@media screen and (max-width: 410px) {
+    .my-orders-window .all-orders{
+        align-items: center;
+    }
+    .my-orders-window .order{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .track-order-window .tracking-stage .stage-symbol{
+        width: 70px;
+    }
+
+    .tracking-stage .stage-text{
+        width: calc(100% - 70px);
+    }
+    
+}

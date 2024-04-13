@@ -1,0 +1,180 @@
+.card-carousel{
+    width: 90%;
+    /* height: 200px; */
+    /* background: black; */
+    margin-top: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.carousel-banner{  
+    width: 100%;
+    aspect-ratio: 2;
+    min-height: 133px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    position: relative;
+    overflow-y: hidden;
+}
+
+
+
+.carousel-banner::-webkit-scrollbar{
+    display: none;
+}
+
+.carousel-banner .cards-overflow{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    /* background: #8f8f8f; */
+}
+
+.carousel-banner .card{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    margin: 0px 5px;
+    background: blue;
+    scroll-snap-align: center;
+}
+
+.card-carousel .carousel-pins{
+    width: 60px;
+    height: 10px;
+    /* background: #000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    /* margin-left: -10px; */
+    margin-top: 8px;
+}
+
+.carousel-pins .pin{
+    width: 8px;
+    height: 8px;
+    background: #cbcbcb;
+    border-radius: 50%;
+}
+
+
+.add-card, .new-card-window .create-card,
+.new-card-window .delete-card-btn,
+.new-card-window .cancel-delete-btn
+{
+    margin-top: 20px;
+    width: 90%;
+    height: 35px;
+    color: #fff;
+    font-size: 13px;
+    background: #524ECA;
+}
+
+
+.new-card-window .cancel-delete-btn{
+    border: 1px solid #8d8af4;
+    color: #8d8af4;
+    margin-top: 15px;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-card-window .delete-card-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.new-card-window .create-card{
+    margin-top: 30px;
+    width: 85%;
+    margin-bottom: 40px;
+}
+
+
+.new-card-window .card{
+    margin-top: 100px;
+    width: 95%;
+    max-width: 300px;
+    aspect-ratio: 2;
+    display: flex;
+    background: #524ECA;
+    flex-shrink: 0;
+}
+
+.new-card-form{
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-number-input, .horizontal-part{
+    width: 90%;
+}
+
+.horizontal-part{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.horizontal-part div{
+    width: 50%;
+}
+
+
+.card-number-input p,
+.horizontal-part p{
+    font-size: 13px;
+}
+.card-number-input input{
+    width: 95%;
+    height: 40px;
+    margin-top: 5px;
+    padding-left: 10px;
+     background:  #4a4a681a;
+}
+
+.horizontal-part input{
+    width: 90%;
+    height: 40px;
+    margin-top: 5px;
+    padding-left: 10px;
+     background:  #4a4a681a;
+}
+
+.delete-status-window{
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-status-window .main-icon{
+    margin-bottom: 10px;
+}
+
+.delete-status-window h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.delete-status-window p{
+    font-size: 15px;
+    color: #494949;
+}

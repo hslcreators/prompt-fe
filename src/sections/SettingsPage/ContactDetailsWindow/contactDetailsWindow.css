@@ -1,0 +1,52 @@
+.contact-details-section{
+    width: 80%;
+    height: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-left: 0%;
+}
+
+.contact-info{
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.contact-info h5{
+    font-size: 14px;
+    color: #646464;
+}
+
+.contact-info .contact-value, 
+.contact-info.social{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: #646464;
+    font-size: 13px;
+    margin-top: 5px;
+    border-radius: 7px;
+    border: 2px solid #bcbcbc;
+}
+
+.contact-info.social{
+    margin-top: 15px;
+}
+
+.contact-info.social .social-icon{
+    margin-right: 10px;
+}
+
+.contact-info.social svg{
+    color: #000;
+}
+
+.contact-details-window .close-btn{
+    height: 35px;
+    border: 1px solid #e8e7fc;
+    font-size: 14px;
+}
