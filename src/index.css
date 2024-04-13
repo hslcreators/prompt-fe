@@ -35,6 +35,11 @@ input:active {
 	outline: none;
 }
 
+select:focus,
+select:active {
+	outline: none;
+}
+
 textarea {
 	overflow: auto;
 	outline: none;
@@ -43,3 +48,7 @@ textarea {
 	box-shadow: none;
 	resize: none; /*remove the resize handle on the bottom right*/
 }
+
+/* .test {
+	color: #a013cecc;
+} */
