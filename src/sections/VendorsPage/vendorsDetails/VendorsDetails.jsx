@@ -1,41 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import VendorHeading from "@/components/VendorHeading/VendorHeading";
+
 const VendorsDetails = () => {
 	const navigate = useNavigate();
 	return (
 		<React.Fragment>
 			<div className="flex flex-col text-[#525252] font-bold vsm:text-[4.2vw] lg:text-[20px] xl:text-[30px] my-[6vw] nsm:my-[3vw]">
-				<div className="w-[5.2vw] my-[3vw]  lg:mt-[1vw] lg:mb-[3vw] lg:w-[24px] lg:h-[24px]">
-					<img
-						className="w-full h-full object-cover"
-						src="/assets/icons/left.svg"
-						alt="A left arrow"
-					/>
-				</div>
-				<div className="w-100% max-w-[1048px]">
-					<img
-						className="w-full h-full object-cover rounded-lg"
-						src="/assets/images/userProfileBg.png"
-						alt="A left arrow"
-					/>
-				</div>
-				<div className="flex flex-row justify-between">
-					<div className="w-[10vw] h-[10vw] relative bottom-[6vw] left-[2vw]">
-						<img
-							className="w-full h-full object-cover"
-							src="/assets/images/userProfile.png"
-							alt="A user profile icon"
-						/>
-					</div>
-					<div className="w-[6vw] h-[6vw] relative bottom-[3vw]">
-						<img
-							className="w-full h-full object-cover"
-							src="/assets/images/message.png"
-							alt="A message icon"
-						/>
-					</div>
-				</div>
+				<VendorHeading />
 				<div>
 					<div>CST COMPUTER LAB</div>
 					<div className="vsm:text-[3vw] lg:text-[13px] xl:text-[21px] font-normal">Price : N50.000</div>

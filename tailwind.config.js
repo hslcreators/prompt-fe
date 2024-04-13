@@ -19,6 +19,12 @@ export default {
 				nxl: "800px",
 				xl: "1100px",
 			},
+			fontSize: {
+				settingsHead: "clamp(20px, 2.4vw, 30px)",
+			},
+			textColor: {
+				customGray: "#3b3b3b",
+			},
 		},
 		plugins: [],
 	},
