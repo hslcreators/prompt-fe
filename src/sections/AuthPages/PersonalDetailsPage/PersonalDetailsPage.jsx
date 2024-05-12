@@ -1,34 +1,33 @@
-import './CreatePasswordContent.css'
+import './personalDetails.css'
 
-const CreatePasswordContent = () => {
+const PersonalDetailsContent = () => {
     return (
-        <div className="create-password-content page-content">
-            <div className="heading">
-                <h1>Create New Password</h1>
-                <p>Set new password for your account so you can login and access all the features</p>
+        <div className="personal-details-content">
+             <div className="heading">
+                <h1>Personal Details</h1>
+                <p>Enter your personal details to continue the signup process</p>
             </div>
             <form className="form-content">
                 <div className="input-label">
-                    <span>Password</span>
+                    <span>First Name</span>
                     <input type="password" name="" id="" placeholder='...............'/>
                 </div>
                 <div className="input-label">
-                    <span>Confirm Password</span>
+                    <span>Last Name</span>
                     <input type="password" name="" id="" placeholder='...............'/>
                 </div>
                 <div className="form-bottom">
                     <div className="remember-check">
                         <input type="checkbox" name="" id="" />
-                        Remember me
+                        Sign up as vendor
                     </div>
                 </div>
                 <button className="submit-btn">
-                    RESET PASSWORD
+                   SIGN UP
                 </button>
-            </form> 
-            
+            </form>
         </div>
     )
 }
 
-export default CreatePasswordContent
+export default PersonalDetailsContent
