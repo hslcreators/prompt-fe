@@ -57,7 +57,7 @@ const SignUpContent = () => {
 					onClick={() => navigate("/login")}
 					className="submit-btn"
 				>
-					SIGN UP
+					NEXT
 				</button>
 			</form>
 			{/* <div className="bottom-text">
