@@ -3,6 +3,8 @@ import googleImg from "/assets/images/google.png";
 import "./SignUpContent.css";
 import { useNavigate } from "react-router-dom";
 
+//signup page
+
 const SignUpContent = () => {
 	const navigate = useNavigate();
 	return (
