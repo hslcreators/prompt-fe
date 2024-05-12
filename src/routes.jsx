@@ -5,7 +5,6 @@ import SignUp from "@pages/signup";
 import CreatePassword from "@pages/createPassword";
 import ForgotPassword from "@pages/forgotPassword";
 import VerifyCode from "@pages/verifyCode";
-import PersonalDetailsPage from "@pages/personalDetails";
 
 const router = createBrowserRouter([
 	{
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
 	{
 		path: "/forgotpassword",
 		element: <ForgotPassword />,
-	},
-	{
-		path: "/personaldetails",
-		element: <PersonalDetailsPage />,
 	},
 	{
 		path: "/createpassword",
