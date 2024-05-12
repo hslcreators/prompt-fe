@@ -15,7 +15,7 @@ const VerifyContent = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="verify-content page-content">
+		<div className="verify-content">
 			<div className="heading">
 				<h1>Verify Code</h1>
 				<p>Enter 4 digits code that you received on username@gmail.com.</p>

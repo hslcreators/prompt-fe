@@ -2,7 +2,7 @@ import './CreatePasswordContent.css'
 
 const CreatePasswordContent = () => {
     return (
-        <div className="create-password-content page-content">
+        <div className="create-password-content">
             <div className="heading">
                 <h1>Create New Password</h1>
                 <p>Set new password for your account so you can login and access all the features</p>
