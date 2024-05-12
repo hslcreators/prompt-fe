@@ -10,6 +10,7 @@ import VendorsPage from "@pages/vendorsPage";
 import UsersDashboards from "@pages/usersDashboard";
 import VendorsProfile from "@pages/vendorsProfile";
 import SettingsPage from "@pages/SettingsPage";
+import PersonalDetailsPage from "./pages/personalDetails";
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 	{
 		path: "/createpassword",
 		element: <CreatePassword />,
+	},
+	{
+		path: "/personaldetails",
+		element: <PersonalDetailsPage />,
 	},
 	{
 		path: "/verify",
