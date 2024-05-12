@@ -76,3 +76,23 @@
     align-items: center;
     font-weight: 600;
 }
+
+
+@media screen and (max-width: 685px) {
+    .auth-container .side-image{
+        width: 30vw;
+    }
+    .auth-container .page-content{
+        width: 70vw;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .auth-container .side-image{
+        display: none;
+    }
+    .auth-container .page-content{
+        width: 100vw;
+    }
+}

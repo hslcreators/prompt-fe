@@ -3,10 +3,12 @@ import googleImg from "/assets/images/google.png";
 import "./SignUpContent.css";
 import { useNavigate } from "react-router-dom";
 
+//signup page
+
 const SignUpContent = () => {
 	const navigate = useNavigate();
 	return (
-		<div className="login-content signup-content">
+		<div className="login-content signup-content page-content">
 			<div className="heading">
 				<h1>Create Account</h1>
 				<p>Start your journey with us today!</p>
@@ -57,7 +59,7 @@ const SignUpContent = () => {
 					onClick={() => navigate("/login")}
 					className="submit-btn"
 				>
-					SIGN UP
+					NEXT
 				</button>
 			</form>
 			{/* <div className="bottom-text">

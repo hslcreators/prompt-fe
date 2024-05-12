@@ -128,3 +128,13 @@
     color: #5d5d5d;
     margin: 0px 4px;
 }
+
+@media screen and (max-width: 320px) {
+    .login-content .heading h1{
+        font-size: 1.6rem;
+    }
+
+    .login-content .heading{
+        padding-left: 20px;
+    }
+}
