@@ -1,0 +1,50 @@
+.progress{
+    width: 100vw;
+    height: 10px;
+    background: #d3d1ff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    display: none;
+}
+
+.progress .bar{
+    width: 0%;
+    height: 100%;
+    border-radius: 0px 7px 7px 0px;
+    background: #524ECA;;
+}
+
+.progress.start,
+.progress.end{
+    display: flex;
+    opacity: initial;
+}
+
+
+.progress.start .bar{
+    width: 65%;
+    animation: start 1s  1 linear;
+}
+
+.progress.end .bar{
+    width: 100%;
+    animation: end 1s  1 linear;
+}
+
+@keyframes start {
+    from{   
+        width: 0%;
+    }to{
+        width: 65%;
+    }
+}
+
+@keyframes end {
+    from{   
+        width: 65%;
+    }to{
+        width: 100%;
+    }
+}

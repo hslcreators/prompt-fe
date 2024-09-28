@@ -2,8 +2,9 @@ import '../sections/SettingsPage/settings.css'
 import VendorsSideBar from '@/sections/VendorsPage/vendorsSideBar/VendorsSideBar';
 import VendorsSearchArea from '@/sections/VendorsPage/vendorsSearchArea/VendorsSearchArea';
 import VendorHeading from '@/components/VendorHeading/VendorHeading';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SettingsWindow from '@/sections/SettingsPage/SettingsWindow';
+import { progressRef } from '@/components/Progress/Progress';
 
 
 
@@ -116,7 +117,16 @@ const SettingsOption = ({option, index, setSelectWindow}) => {
 
 const SettingsPage = () => {
     const [selectWindow, setSelectWindow] = useState(false)
-    console.log(selectWindow)
+
+    useEffect(() => {
+        document.querySelector('.main-progress').classList.remove('start')
+		document.querySelector('.main-progress').classList.add('end')
+		setTimeout(() => {
+			document.querySelector('.main-progress').classList.remove('start')
+			document.querySelector('.main-progress').classList.remove('end')
+		}, 1200)
+    }, [])
+    // console.log(selectWindow)
     return (
         <React.Fragment>
             <div className="settings-page">

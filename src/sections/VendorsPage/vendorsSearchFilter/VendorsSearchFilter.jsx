@@ -14,7 +14,7 @@ const VendorsSearchFilter = () => {
 					</div>
 					<div className="text-[#4A5568] font-bold vsm:text-[5.2vw] lg:text-[20px] xl:text-[30px] ml-[1.5vw] lg:ml-[12px] xl:ml-[20px]">Vendors</div>
 				</button>
-				<div className="vsm:hidden lg:flex flex-row justify-between">
+				{/* <div className="vsm:hidden lg:flex flex-row justify-between">
 					<div>
 						<input
 							id="FName"
@@ -33,7 +33,7 @@ const VendorsSearchFilter = () => {
 							/>
 						</div>
 					</button>
-				</div>
+				</div> */}
 			</div>
 		</React.Fragment>
 	);

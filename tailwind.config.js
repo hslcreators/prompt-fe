@@ -14,6 +14,7 @@ export default {
 				sm: "375px",
 				nsm: "600px",
 				md: "424px",
+				mobile: "550px",
 				lg: "565px",
 				alg: "700px",
 				nxl: "800px",
@@ -22,9 +23,19 @@ export default {
 			fontSize: {
 				settingsHead: "clamp(20px, 2.4vw, 30px)",
 			},
+			width: {
+				searchBar: "calc(100% - 50px)"
+			},
 			textColor: {
 				customGray: "#3b3b3b",
 			},
+			margin: {
+					'majorClamp': 'clamp(70px, 30vw, 240px)'
+
+			},
+			zIndex: {
+				'one': 1
+			}
 		},
 		plugins: [],
 	},

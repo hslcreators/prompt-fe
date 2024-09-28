@@ -1,4 +1,5 @@
 import './CreatePasswordContent.css'
+import '../Login/loginContent.css'
 
 const CreatePasswordContent = () => {
     return (
@@ -17,10 +18,10 @@ const CreatePasswordContent = () => {
                     <input type="password" name="" id="" placeholder='...............'/>
                 </div>
                 <div className="form-bottom">
-                    <div className="remember-check">
+                    {/* <div className="remember-check">
                         <input type="checkbox" name="" id="" />
                         Remember me
-                    </div>
+                    </div> */}
                 </div>
                 <button className="submit-btn">
                     RESET PASSWORD
