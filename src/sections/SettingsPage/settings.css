@@ -1,0 +1,212 @@
+.settings-page{
+    width: 100vw;
+    height: 100vh;
+}
+
+.settings-page-main{
+    width: auto;
+    height: 100vh;
+    margin-left: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* color: #3b3b3b; */
+}
+
+.settings-content{
+    width: 80%;
+    min-height: calc(100vh - 84.67px);
+    height: fit-content;
+}
+
+.settings-options{
+    width: 100%;
+    height: auto;
+}
+
+.settings-options .option{
+    width: 100%;
+    height: 90px;
+    border: 1px solid #b3b3b3;
+    border-radius: 20px 12px 20px 12px;
+    /* background: black; */
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: #444444;
+    margin-bottom: 30px;
+}
+
+
+.settings-options .icon{
+    margin-left: 30px;
+}
+
+.settings-options .icon svg{
+    width: 28px;
+    height: 28px;
+}
+
+.settings-options h3{
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 20px;
+}
+
+.settings-options .arrow-icon{
+    position: absolute;
+    right: 30px;
+}
+
+.settings-options .toggle{
+    position: absolute;
+    right: 27px;
+    width: 80px;
+    height: 40px;
+    background: gray;
+    border-radius: 20px;
+}
+
+
+.settings-options .toggle .toggle-btn{
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    background: #fff;
+    top: 50%;
+    transform: translate(5px, -50%);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.settings-options .toggle.active{
+   background: green;
+}
+
+.settings-options .toggle.active .toggle-btn{
+   right: 10px;
+}
+
+.settings-window{
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    opacity: 0;
+    pointer-events: none;
+    left: 0px;
+    height: 100vh;
+    background: #00000099;
+}
+
+.settings-window.active{
+    opacity: initial;
+    pointer-events: all;
+}
+
+.settings-windows h3{
+    position: absolute;
+    top: 25px;
+    left: 10%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.settings-windows{
+    max-width: 400px;
+    height: 500px;
+    width: 95vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all .4s;
+    transform: translate(-50%, -50%)
+    scale(0.7);
+    opacity: 0;
+    pointer-events: none;
+    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.settings-windows.active{
+    opacity: initial;
+    transform: scale(1)
+    translate(-50%, -50%);
+    pointer-events: all;
+}
+
+.settings-windows .close-window-icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.settings-windows .close-window-icon svg{
+   width: 16px;
+   height: 16px;
+   color: #303030;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .settings-page-main{
+       margin-left: 30vw;
+    }
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    .settings-page-main .option{
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .settings-options h3{
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .settings-options .icon svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    .settings-options .toggle{
+        position: absolute;
+        right: 0px;
+        transform: scale(0.5);
+    }
+
+    .settings-options {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .settings-page-main{
+        margin-left: 19vw;
+    }
+
+    .settings-options .icon{
+        margin-left: 20px;
+    }
+
+    .settings-options h3{
+        margin-left: 10px;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+        .settings-options .toggle,
+        .settings-options .arrow-icon{
+            display: none;
+        }
+}

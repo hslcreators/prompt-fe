@@ -5,9 +5,9 @@ const Dashboard = () => {
 		<>
 			<Link
 				to="/user-dashboard"
-				className="flex flex-row gap-[1.1vw] justify-center lg:justify-normal"
+				className="flex flex-row gap-[1.1vw] justify-center alg:justify-normal"
 			>
-				<div className="lg:w-[18px] lg:h-[18px]">
+				<div className="alg:w-[18px] alg:h-[18px]">
 					<picture className="">
 						<source
 							className=""
@@ -21,7 +21,7 @@ const Dashboard = () => {
 						/>
 					</picture>
 				</div>
-				<div className="hidden lg:block text-[#242424] font-Roboto text-[2.2vw] nxl:text-[18px] font-medium relative nxl:bottom-[4px]">Dashboard</div>
+				<div className="hidden alg:block text-[#242424] font-Roboto text-[2.2vw] nxl:text-[18px] font-medium relative nxl:bottom-[4px]">Dashboard</div>
 			</Link>
 		</>
 	);

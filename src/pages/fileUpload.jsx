@@ -2,18 +2,31 @@ import Container from "@components/Container/Container";
 import FileUploadForm from "@components/FileUpload/FileUploadForm/FileUploadForm";
 import FileUploadNav from "@components/FileUpload/Nav/FileUploadNav";
 import PageContainer from "@components/PageContainer/PageContainer";
-import { useState } from "react";
+import PaymentForm from "@components/Payment/PaymentForm";
+import { AnimatePresence } from "framer-motion";
+import { progressRef } from "@/components/Progress/Progress";
+import { useEffect, useState } from "react";
 
 const FileUpload = () => {
 	const [page, setPage] = useState("file-upload");
+
+	useEffect(() => {
+		document.querySelector('.main-progress').classList.remove('start')
+		document.querySelector('.main-progress').classList.add('end')
+		setTimeout(() => {
+			document.querySelector('.main-progress').classList.remove('start')
+			document.querySelector('.main-progress').classList.remove('end')
+		}, 1200)
+	}, [])
+
 	return (
 		<PageContainer>
-			<Container className="mt-8">
-				<FileUploadNav
-					page={page}
+			<Container>
+				{/* <FileUploadNav
+					currentPage={page}
 					setPage={setPage}
-				/>
-				<FileUploadForm />
+				/> */}
+				<AnimatePresence>{page == "file-upload" ? <FileUploadForm /> : <PaymentForm />}</AnimatePresence>
 			</Container>
 		</PageContainer>
 	);

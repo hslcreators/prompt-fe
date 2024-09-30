@@ -1,0 +1,39 @@
+.vendor-signup-page{
+    width: 50vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.vendor-signup-page.loading{
+   opacity: .8;
+   pointer-events: none;
+}
+
+.vendor-signup-page .vendor-form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vendor-signup-page .heading{
+    width: 90%;
+    max-width: 430px;
+     line-height: 30px;
+     display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+.vendor-signup-page select{
+    width: 100%;
+    height: 43px;
+    border: 1px solid #cdcdcd;
+    margin-top: 5px;
+    padding-right: 20px;
+}
+
+.vendor-form option{
+    padding: 10px 0px;
+}

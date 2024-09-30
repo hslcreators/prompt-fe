@@ -1,8 +1,9 @@
 import './CreatePasswordContent.css'
+import '../Login/loginContent.css'
 
 const CreatePasswordContent = () => {
     return (
-        <div className="create-password-content">
+        <div className="create-password-content page-content">
             <div className="heading">
                 <h1>Create New Password</h1>
                 <p>Set new password for your account so you can login and access all the features</p>
@@ -17,10 +18,10 @@ const CreatePasswordContent = () => {
                     <input type="password" name="" id="" placeholder='...............'/>
                 </div>
                 <div className="form-bottom">
-                    <div className="remember-check">
+                    {/* <div className="remember-check">
                         <input type="checkbox" name="" id="" />
                         Remember me
-                    </div>
+                    </div> */}
                 </div>
                 <button className="submit-btn">
                     RESET PASSWORD
