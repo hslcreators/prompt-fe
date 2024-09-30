@@ -39,7 +39,7 @@ const vendorsProfile = () => {
 		setIsOpen: state.setIsOpen
     }))
 
-	console.log('open', isOpen)
+ 
 
 	useEffect(() => {
 		setLoading(true)
@@ -94,7 +94,7 @@ const vendorsProfile = () => {
 										):(
 											<>
 												<div className="w-[96%] mobile:w-[86%]">
-													<VendorsDetails vendorData = { vendor } isVendor = { isVendor }/>
+													<VendorsDetails vendorData = { vendor } isVendor = { isVendor } userData = { user }/>
 												</div>
 												<div className="w-[96%] mobile:w-[86%]">
 													<VendorsDescription vendorData = { vendor }/>

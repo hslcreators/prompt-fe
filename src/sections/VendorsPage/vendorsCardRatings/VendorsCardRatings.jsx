@@ -35,14 +35,14 @@ const VendorsCardRatings = () => {
 				setLoading(false)
 				setError(true)
 			}
-			// console.log(allVendorsData, allVendorsError)
+ 
 		})
 		// const uri = `${root}/auth/vendors`
 		// const body = JSON.stringify({
 		// 	location: 'cst lab'
 		// })
 		// useFetch(uri, body, headers, 'post').then(({ data: allVendorsData, error, allVendorsError }) => {
-		// 	console.log(allVendorsData, allVendorsError)
+ 
 		// })
 	}, [])
 

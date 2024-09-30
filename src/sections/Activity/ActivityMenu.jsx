@@ -38,7 +38,7 @@ const ActivityMenu = () => {
         // }
     ]
 
-    // console.log(selected)
+ 
 
     const selectButtons = (id) => {
         switch (id) {
@@ -138,7 +138,7 @@ const ActivityMenu = () => {
                     return el.id == button.id
                 }))[0].active){
                     if(button.id.includes('order-')){
-                        console.log(true)
+ 
                         selectButtons('orders')
                     }else{
                         selectButtons('default')

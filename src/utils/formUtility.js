@@ -15,7 +15,7 @@ const setStorage = () => {
 
 
 const appendData =  (key, value) => {
-    console.log(key)
+ 
     const SSData = JSON.parse(sessionStorage.getItem('promptFD'))
     switch (key) {
 			case "first_name":
@@ -27,12 +27,12 @@ const appendData =  (key, value) => {
 				sessionStorage.setItem("promptFD", JSON.stringify(SSData));
 				break;
 			case "emall":
-				console.log(key);
+ 
 				SSData.email = value;
 				sessionStorage.setItem("promptFD", JSON.stringify(SSData));
 				break;
 			case "password":
-				console.log(key);
+ 
 				SSData.password = value;
 				sessionStorage.setItem("promptFD", JSON.stringify(SSData));
 				break;

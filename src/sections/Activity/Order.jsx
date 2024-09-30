@@ -22,7 +22,7 @@ const Order = () => {
 
     const markComplete = (status) => {
         setLoading(prev => true)
-        // console.log({ ...activeOrder, is_complete: status })
+ 
         const url = `${root}/orders/${activeOrder.id}/update`
         const headers = {
             'Authorization': `Token ${token}`,
@@ -32,7 +32,7 @@ const Order = () => {
             is_complete: status
         })
         useFetch(url, body, headers, 'put').then(({ data: markCompleteData, error: markCompleteError })=>{
-            // console.log(markCompleteData, markCompleteError)
+ 
             setLoading(prev => false)
             if(markCompleteData){
                 setActiveOrder({

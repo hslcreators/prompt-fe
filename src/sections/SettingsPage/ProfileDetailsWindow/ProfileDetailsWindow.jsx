@@ -3,7 +3,7 @@ import ProfileImage from '/assets/images/userProfile.png'
 import { popoutWindow } from '@/pages/SettingsPage'
 
 const ProfileDetailsWindow = ({isProfile}) => {
-    console.log(isProfile)
+ 
     return (
         <div className={`profile-details-window settings-windows ${isProfile? 'active': false}`}>
             <h3>Profile details</h3>

@@ -69,7 +69,7 @@ const FileUploadForm = () => {
 		setSelectedFiles((prev) => [...prev, ...files]);
 	};
 
-	//  console.log(selectedFiles)
+ 
 
 	const removeSelectedFile = (fileName) => setSelectedFiles((prev) => [...prev.filter((file) => file.name !== fileName)]);
 
@@ -80,11 +80,11 @@ const FileUploadForm = () => {
 			// 	setUpdate((prev) => ({ ...prev, percent: prev.percent + 20 }));
 			// }, 3000);
 			setTimeout(() => setUpdate((prev) => ({ ...prev, percent: 100 })), 3000);
-			// console.log(update.percent);
+ 
 		}
 	}, [update, isOpen]);
 
-	// console.log(time)
+ 
 
 	const handleSubmit = (e) => {
 		setLoading(prev => true)
@@ -98,10 +98,10 @@ const FileUploadForm = () => {
 			const formData = new FormData()
 
 			const vendorID = Number(window.location.href.split('/')[4])	
-			console.log(vendorID, token)
+ 
 			if(e.target.description.value != '' && e.target.no_of_pages.value != '' && e.target.no_of_copies.value != ''){
-				console.log('seleted', selectedFiles[0])
-				console.log(fileInputRef.current.files)
+ 
+ 
 				formData.append('no_of_copies', e.target.no_of_copies.value);
 				formData.append('printer_id', vendorID);
 				for (let index = 0; index < selectedFiles.length; index++) {
@@ -120,7 +120,7 @@ const FileUploadForm = () => {
 					'Content-Type': 'multipart/form-data',
 				}	
 				useFetch(url, formData, headers, 'post').then(({data: uploadData, eror: uploadError}) => {
-					// console.log(uploadData, uploadError)
+ 
 					if(uploadData){
 						setLoading(prev => false)
 						// setIsOpen(true);
@@ -142,8 +142,8 @@ const FileUploadForm = () => {
 				setError('Required Field Missing')
 			}
 
-			// console.log(selectedFiles);
-			// console.log(description);
+ 
+ 
 		} else{
 			setStatus(prev => false)
 			setLoading(prev => false)

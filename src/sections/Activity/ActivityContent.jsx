@@ -100,7 +100,7 @@ const ActivityContent = () => {
         }
     }, [active])
 
-    console.log(data)
+ 
 
     return (
         <div className="all-activities" style={ loading? {

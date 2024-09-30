@@ -41,7 +41,7 @@ const UserActivityPage = () => {
 			'Authorization': `Token ${token}`
 		}
         useFetch(url, false, headers, 'get').then(({data, error}) => {
-            console.log(data, error)
+ 
         })
         setIsMobile(prev => window.innerWidth <= 550)
         document.querySelector('.main-progress').classList.remove('start')

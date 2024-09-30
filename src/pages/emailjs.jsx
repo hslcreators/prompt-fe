@@ -17,7 +17,7 @@ const ContactUs = () => {
       .sendForm('service_i6fh7vg', 'template_veuueef', form.current)
       .then(
         (result) => {
-          console.log('Email sent successfully:', result.text);
+ 
         },
         (error) => {
           console.error('Email sending failed:', error.text);

@@ -7,11 +7,11 @@ const ProgressBar = ({ config, setIsOpen, isOpen, setConfig }) => {
 
 	const closeModal = () => {
 		setConfig((prev) => {
-			console.log(prev);
+ 
 			return { ...prev, percent: 0 };
 		});
 		setIsOpen(false);
-		console.log(config);
+ 
 	};
 
 	if (!isOpen) return null;

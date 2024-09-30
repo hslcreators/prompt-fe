@@ -8,7 +8,7 @@ import DeleteCard from "./MyCards/DeleteCard"
 import DeleteCardStatus from "./MyCards/DeleteCardStatus"
 
 const SettingsWindow = ({ selectWindow }) => {
-    console.log(selectWindow)
+ 
     return (
         <div className={`settings-window ${selectWindow? 'active': false}`}>
             <ProfileDetailsWindow isProfile = { selectWindow == 'profile' ? true : false }/>

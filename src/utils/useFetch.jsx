@@ -6,7 +6,7 @@ const useFetch = async (url, body,  headers , type) => {
             try {
                 const response = await axios.post(url, body, {headers: headers })
                     const payload = await response.data
-                    console.log(payload)
+ 
                     return {
                         error: false,
                         data: payload
@@ -49,7 +49,7 @@ const useFetch = async (url, body,  headers , type) => {
             try {
                 const response = await axios.put(url, body, {headers: headers })
                     const payload = await response.data
-                    console.log(payload)
+ 
                     return {
                         error: false,
                         data: payload

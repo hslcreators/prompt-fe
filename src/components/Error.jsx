@@ -4,7 +4,7 @@ import './error.css'
 const Error = ({ error, msg, status, setError }) => {
     useEffect(() => {
         if(error){
-            console.log(msg)
+ 
            setTimeout(() => {
             setError(false)
            }, 1000)

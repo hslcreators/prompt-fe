@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 const root = `http://127.0.0.1:8000/api/v1`
 const emailApiKey = import.meta.env.VITE_EMAILAPI
-// const root = `http://192.168.132.235:8000/api/v1``
+// const root = `http://192.168.254.235:8000/api/v1`
 
 const useAuthStore = create((set) => ({
     token: JSON.parse(localStorage.getItem('promptAuth'))? JSON.parse(localStorage.getItem('promptAuth')).authToken : false,

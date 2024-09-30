@@ -81,12 +81,12 @@ const VerifyContent = () => {
 	}
 
 	useEffect(() => {
-		console.log(sessionStorage.getItem('promptFD'))
+ 
 		if(sessionStorage.getItem('promptFD')){
 			if(JSON.parse(sessionStorage.getItem('promptFD')).signupToken){
 				const url = `${root}/auth/generate-otp`
 				setSignUpToken(prev => JSON.parse(sessionStorage.getItem('promptFD')).signupToken)
-				console.log(JSON.parse(sessionStorage.getItem('promptFD')).signupToken)
+ 
 				const headers = {
 					'Authorization': `Token ${JSON.parse(sessionStorage.getItem('promptFD')).signupToken}`
 				}	
@@ -96,7 +96,7 @@ const VerifyContent = () => {
 				inputRefs.current.querySelectorAll('input')[0].focus()
 				useFetch(url, false, headers, 'get').then(({error, data})=>{
 					if(error){
-						console.log(error)
+ 
 						setLoading(false)
 						setError('An Error Occured')
 					}else{
@@ -124,14 +124,12 @@ const VerifyContent = () => {
 		}
 	}, []);
 
-	console.log(otp)
 
 	const checkOTP = (e) => {
 		e.preventDefault()
 		const userInput = Number(e.target.pin1.value + e.target.pin2.value + e.target.pin3.value + e.target.pin4.value + e.target.pin5.value + e.target.pin6.value)
-		console.log(userInput, otp)
 		if(userInput == otp){
-			console.log(true)
+			
 			const url = `${root}/auth/verify-otp/`
 			const headers = {
 				'Authorization': `Token ${signupToken}`,
@@ -143,19 +141,16 @@ const VerifyContent = () => {
 			setLoading(true)
 			useFetch(url, body, headers, 'post').then(({ error : verifyOTPError, data : verifyOTPData })=>{
 				if(verifyOTPError){
-					console.log(verifyOTPError)
 					setError('An Error Occured!')
 					setLoading(false)
 					clearOTP(inputRefs)
 				}else{
-					console.log(verifyOTPData)
 					if(JSON.parse(sessionStorage.getItem('promptFD')).isVendor){
 						startTransition(() =>{
 							navigate('/vendorsignup')
 						})
 					}else{
 						const formData = JSON.parse(sessionStorage.getItem('promptFD'))
-						// console.log(formData)
 						const userData = {
 							id: verifyOTPData.id,
 							first_name: formData.first_name,
@@ -176,7 +171,6 @@ const VerifyContent = () => {
 				}
 			})
 		}else{
-			console.log(false)
 			setError('Invalid OTP!')
 			setLoading(false)
 			clearOTP(inputRefs)

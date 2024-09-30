@@ -7,7 +7,7 @@ import { reviewsStore } from "@/utils/OtherStores"
 
 const ReviewOptions = ({ optionID, setOptionID }) => {
 
-    console.log(optionID)
+ 
 
     const deleteRef = useRef(false)
     const deleteBtnRef = useRef(false)
@@ -44,7 +44,7 @@ const ReviewOptions = ({ optionID, setOptionID }) => {
                 deleteReviewFromUI(optionID)
                 setShowDelete(prev => false)
             }
-            console.log(deleteReviewData, deleteReviewError)
+ 
         })
     }
 

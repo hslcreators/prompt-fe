@@ -19,9 +19,9 @@ const VendorsDescription = ({ vendorData }) => {
 		setAllReviews: state.setAllReviews
 	}))
 
-	console.log(vendorData)
+ 
 
-	console.log(allReviews)
+ 
 
 	useEffect(() => {
 		const headers = {
@@ -34,11 +34,11 @@ const VendorsDescription = ({ vendorData }) => {
 					return el.printer == vendorData.id
 				})
 				setAllReviews(filtedReviews)
-				// console.log(getReviewData, vendorData)
+ 
 			}else{
 				setError(prev => true)
 			}
-			// console.log(getReviewData, getReviewError)
+ 
 		})
 	}, [])
 	return (

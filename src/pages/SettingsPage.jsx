@@ -67,7 +67,7 @@ const SettingsOption = ({option, index, setSelectWindow}) => {
     const [notificationToggle, setNotificationToggle] = useState(false)
 
      popoutWindow = (linkTo) => {
-        console.log(linkTo)
+ 
         if(linkTo == 'notifications'){
             setSelectWindow(false)
         }else{
@@ -126,7 +126,7 @@ const SettingsPage = () => {
 			document.querySelector('.main-progress').classList.remove('end')
 		}, 1200)
     }, [])
-    // console.log(selectWindow)
+ 
     return (
         <React.Fragment>
             <div className="settings-page">

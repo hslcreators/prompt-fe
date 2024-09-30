@@ -74,10 +74,10 @@ const SignUpContent = () => {
 
 	useEffect(()=>{
 		const SSData = sessionStorage.getItem('promptFD')
-		console.log(authError)
+ 
 		if(SSData){
 			if(formRef){
-				console.log(formRef.current.elements.email)
+ 
 				formRef.current.elements.email.value = JSON.parse(SSData).email? JSON.parse(SSData).email : ''
 				formRef.current.elements.password.value = JSON.parse(SSData).password? JSON.parse(SSData).password : '' 
 				formRef.current.elements.validate_password.value = JSON.parse(SSData).password? JSON.parse(SSData).password : '' 

@@ -50,7 +50,7 @@ const orders = [
 ]
 
 const MyOrders = ({isOrders}) => {
-    console.log(isOrders)
+ 
     return (
         <div className={`my-orders-window settings-windows ${isOrders? 'active': false}`}>
             <h3>My Order</h3>

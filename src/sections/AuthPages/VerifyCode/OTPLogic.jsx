@@ -30,7 +30,7 @@ const OTPLogic = (inputRefs) => {
                 input.addEventListener('keydown', (e)=> {
                         if(allowedKeys.includes(e.key)){
                             if(e.key == 'Backspace'){
-                                console.log(currentIndex)
+ 
                                 if(currentIndex > 0){
                                     if(input.value.length == 0){
                                         e.preventDefault()

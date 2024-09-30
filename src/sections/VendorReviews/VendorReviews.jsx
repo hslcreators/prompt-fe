@@ -23,7 +23,7 @@ const VendorReviews = () => {
 		setAllReviews: state.setAllReviews
     }))
 
-    // console.log(optionID)
+ 
 
     
 
@@ -31,7 +31,7 @@ const VendorReviews = () => {
     const [error, setError] = useState(false)
     // const [allReviews, setAllReviews] = useState([...reviews])
 
-    console.log(allReviews)
+ 
 
     const [rating, setRating] = useState(false)
      const [small, setSmall] = useState(true)
@@ -44,7 +44,7 @@ const VendorReviews = () => {
     const addRating = () => {
         const reviewText = inputRef.current.value
         const vendorID = Number(window.location.href.split('/')[4])
-        // console.log(reviewText)
+ 
         setLoading(prev => true)
         if(reviewText){
             const body = {
@@ -60,7 +60,7 @@ const VendorReviews = () => {
             useFetch(url, body, headers, 'post').then(({ data: createReviewData, error: createReviewError }) => {
                 setLoading(prev => false)
                 if(createReviewData){
-                    console.log(createReviewData)
+ 
                     if(!createReviewData.message){
                         setAllReviews([...allReviews, createReviewData])
                         inputRef.current.value = ''
@@ -78,7 +78,7 @@ const VendorReviews = () => {
                         setError(prev => false)
                     }, 900)
                 }
-                // console.log(createReviewData, createReviewError)
+ 
             })
         }
     }
@@ -116,7 +116,7 @@ const VendorReviews = () => {
                         setError(prev => false)
                     }, 900)
                 }
-                // console.log(createReviewData, createReviewError)
+ 
             })
         }
     }
@@ -133,7 +133,7 @@ const VendorReviews = () => {
                 if(reviewData){
                     setError(prev => false)
                     setRating(prev => reviewData.rating)
-                    // console.log(reviewData, reviewError)
+ 
                     inputRef.current.focus()
                     inputRef.current.value = reviewData.comment
                 }else{

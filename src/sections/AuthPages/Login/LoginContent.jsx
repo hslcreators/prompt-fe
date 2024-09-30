@@ -34,29 +34,6 @@ const LoginContent = () => {
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState(false)
 
-	const getMyVendor = async (loginData) => {
-		const url = `${root}/auth/vendors/all`
-		const headers = {
-			'Authorization': `Token ${loginData.token}`,
-		}	
-		try {
-			const response = await axios.get(url, {headers: headers });
-			const data = response.data
-		    const myVendorId = data.filter(function(el){
-				return el.user == loginData.user_id
-			})
-			if(myVendorId.length == 0){
-				const result = false
-				return result
-			}else{
-				const result = myVendorId[0].id
-				return result
-			}
-		  } catch (error) {
-			throw error
-		  }
-	}
-
 	const loginUser = (e) => {
 		setLoading(true)
 		e.preventDefault()
@@ -79,30 +56,26 @@ const LoginContent = () => {
 				}
 			}else{
 				setLoading(false)
-				// console.log(loginData)
+ 
 				const userData = {
 					id: loginData.user_id,
 					first_name: loginData.first_name,
 					last_name: loginData.last_name,
 					email: loginData.email
 				}
-				getMyVendor(loginData).then((result)=>{
-					setLoading(false)
-					updateToken(loginData.token)
-					updateUser(userData)
-					updateIsVendor(result)
-					const promptAuth = {
-						authToken: loginData.token,
-						user: userData,
-						isVendor: result
-					}
-					localStorage.setItem('promptAuth', JSON.stringify(promptAuth))
-					startTransition(() => {
-						navigate('/user-dashboard');
-					})
-				}).catch(error => {
-					setLoading(false)
-					setError('An Error Occured')
+				// console.log(loginData)
+				const promptAuth = {
+					authToken: loginData.token,
+					user: userData,
+					isVendor: loginData.is_printer
+				}
+				localStorage.setItem('promptAuth', JSON.stringify(promptAuth))
+				setLoading(false)
+				updateToken(loginData.token)
+				updateUser(userData)
+				updateIsVendor(loginData.is_printer)
+				startTransition(() => {
+					navigate('/user-dashboard');
 				})
 			}
 		})

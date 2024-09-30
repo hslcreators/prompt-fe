@@ -44,7 +44,7 @@ const SearchResults = () => {
 				setLoading(false)
 				setError(true)
 			}
-			// console.log(allVendorsData, allVendorsError)
+ 
 		})
     }
 

@@ -76,33 +76,25 @@ const VendorSignUp = () => {
 				setError('An Error Occured!')
 				setLoading(false)
 			}else{
-				setLoading(false)
+                setLoading(false)
                 const userData = {
 					id: loginData.user_id,
 					first_name: loginData.first_name,
 					last_name: loginData.last_name,
 					email: loginData.email
 				}
-                getMyVendor(loginData).then((result)=>{
-                    console.log(result)
-					setLoading(false)
-					updateToken(loginData.token)
-					updateUser(userData)
-					updateIsVendor(result)
-					const promptAuth = {
-						authToken: loginData.token,
-						user: userData,
-						isVendor: result
-					}
-					localStorage.setItem('promptAuth', JSON.stringify(promptAuth))
-                    startTransition(() => {
-                        navigate('/user-dashboard');
-                    })
-				}).catch(error => {
-                    console.log(error)
-					setLoading(false)
-					setError('An Error Occured')
-				})
+                const promptAuth = {
+                    authToken: loginData.token,
+                    user: userData,
+                    isVendor: true
+                }
+				updateToken(loginData.token)
+				updateUser(userData)
+				updateIsVendor(true)
+                localStorage.setItem('promptAuth', JSON.stringify(promptAuth))
+                startTransition(() => {
+                    navigate('/user-dashboard');
+                })
 			}
 		})
 	}
@@ -137,7 +129,7 @@ const VendorSignUp = () => {
 
 
       const signupUser =  (vendorBody) => {
-        console.log(vendorBody)
+ 
         const signUpData = JSON.parse(sessionStorage.getItem('promptFD'))
         if (signUpData) {
             const vendorCreateHeaders = {
@@ -149,7 +141,7 @@ const VendorSignUp = () => {
             const url = `${root}/auth/vendors/`
             setLoading(true)
             useFetch(url, vendorBody, vendorCreateHeaders, 'post').then(({ error: vendorSignupError, data: vendorSignupData })=>{
-                console.log(vendorSignupData, vendorSignupError)
+ 
                 if(vendorSignupError){
                     setError('An Error Occured!')
                     setLoading(false)
@@ -208,7 +200,7 @@ const VendorSignUp = () => {
                     <p>Enter your business details to continue the signup process</p>
                 </div>
                 <form className="form-content" onSubmit={ (e) => {
-                    console.log('d')
+ 
                     submitForm(e)
                 } }>
                     <div className="input-label">

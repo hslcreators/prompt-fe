@@ -44,7 +44,7 @@ const PersonalDetailsContent = () => {
     }
 
     const submitForm = (e) => {
-        console.log(e.target.first_name.value)
+ 
         e.preventDefault()
         setLoading(prev => true)
         if(e.target.first_name.value != '' && e.target.last_name.value != '' && e.target.username.value != ''){
@@ -90,7 +90,7 @@ const PersonalDetailsContent = () => {
                                     username: error.response.data.username[0]
                                 }
                             })
-                        }else  if(error.response.data.email){
+                        }else if(error.response.data.email){
                             setAuthError({
                                 error: ['email'],
                                 msg: {
@@ -112,9 +112,7 @@ const PersonalDetailsContent = () => {
                             })
                         }
                     }else{
-                        console.log(data)
                         signUpData.signupToken = data.token
-                        console.log(signUpData)
                         sessionStorage.setItem('promptFD', JSON.stringify(signUpData))
                         startTransition(() => {
                             navigate('/verify')
@@ -128,7 +126,7 @@ const PersonalDetailsContent = () => {
             }
 
             // if(JSON.parse(sessionStorage.getItem('promptFD')).isVendor){
-            //     console.log('true')
+ 
             //     navigate('/vendorsignup')
             // }else{
             //     const SSData  = JSON.parse(sessionStorage.getItem('promptFD'))
@@ -165,7 +163,7 @@ const PersonalDetailsContent = () => {
             }
             if(authError){
                 if(authError.error == 'username'){
-                    console.log(authError)
+ 
                 }
             }
         }
