@@ -1,7 +1,7 @@
 
 import { create } from "zustand";
 
-const root = `http://127.0.0.1:8000/api/v1`
+const root = import.meta.env.VITE_ROOT_URI
 const emailApiKey = import.meta.env.VITE_EMAILAPI
 // const root = `http://192.168.254.235:8000/api/v1`
 
