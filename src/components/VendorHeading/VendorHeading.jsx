@@ -33,11 +33,11 @@ const VendorHeading = ({settings}) => {
 							</div>
 						):(
 							<div className="w-[6vw] h-[6vw] relative bottom-[3vw]">
-								<img
+								{/* <img
 									className="w-full h-full object-cover"
 									src="/assets/images/message.png"
 									alt="A message icon"
-								/>
+								/> */}
 							</div>
 						)
 					}

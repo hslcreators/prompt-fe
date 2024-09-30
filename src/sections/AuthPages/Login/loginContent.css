@@ -40,6 +40,10 @@
     /* background: #323232; */
 }
 
+.login-content.lc .form-content{
+    margin-top: 70px;
+}
+
 .input-label{
     display: flex;
     flex-direction: column;

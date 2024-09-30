@@ -150,6 +150,8 @@
    color: #303030;
 }
 
+
+
 @media screen and (max-width: 800px) {
     .settings-page-main{
        margin-left: 30vw;

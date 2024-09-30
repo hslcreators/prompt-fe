@@ -4,6 +4,22 @@ const OTPLogic = (inputRefs) => {
 
     const allowedKeys =  ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Backspace']
 
+    allInputs.forEach(element => {
+        element.addEventListener('paste', (event)=>{
+            event.preventDefault()
+            const pastedText = event.clipboardData.getData('text')
+            const pastedLength = pastedText.split('').length
+            pastedText.split('').forEach((text, index) => {
+                allInputs[index].value = text
+            })
+            if(pastedLength > 0 && pastedLength < 6){
+                inputAction(allInputs, pastedLength, false)
+            }else{
+                inputAction(allInputs, 5, false)
+            }
+        })
+    });
+
     const inputAction = (allInputs, currentIndex, backspace) => {
         allInputs.forEach((input, index) => {
             input.setAttribute('readonly', 'readonly')
@@ -14,7 +30,7 @@ const OTPLogic = (inputRefs) => {
                 input.addEventListener('keydown', (e)=> {
                         if(allowedKeys.includes(e.key)){
                             if(e.key == 'Backspace'){
-                                console.log(currentIndex)
+ 
                                 if(currentIndex > 0){
                                     if(input.value.length == 0){
                                         e.preventDefault()
@@ -41,7 +57,9 @@ const OTPLogic = (inputRefs) => {
                                     if(input.value.length == 1){
                                         if(!backspace){
                                          e.preventDefault()
-                                         inputAction(allInputs, currentIndex + 1, false)
+                                         if(allInputs[currentIndex].value != ''){
+                                            inputAction(allInputs, currentIndex + 1, false)
+                                         }
                                         }
                                      }else{
                                         if(!backspace){
@@ -67,5 +85,19 @@ const OTPLogic = (inputRefs) => {
     inputAction(allInputs, 0)
 }
 
+const clearOTP = (inputRefs) => {
+    const allInputs = inputRefs.current.querySelectorAll('input')
+    allInputs.forEach((input, index) => {
+        input.value = ''
+        input.classList.remove('focus')
+        input.setAttribute('readonly', 'readonly')
+        if(index == 0){
+            input.classList.add('focus')
+            input.removeAttribute('readonly', 'readonly')
+            input.focus()
+        }
+    })
+}
 
-export { OTPLogic }
+
+export { OTPLogic, clearOTP }

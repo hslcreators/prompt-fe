@@ -35,6 +35,10 @@ input:active {
 	outline: none;
 }
 
+main{
+	z-index: 0;
+}
+
 select:focus,
 select:active {
 	outline: none;
