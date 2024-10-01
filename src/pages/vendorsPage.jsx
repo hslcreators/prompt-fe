@@ -31,7 +31,7 @@ const VendorsPage = () => {
 		<PageContainer>
 			<div className="flex flex-column select-none">
 				<VendorsSideBar />
-				<div className="ml-[0px] w-full mobile:ml-[70px] alg:ml-majorClamp lg:border-b-4 lg:border-l-4 flex flex-col bg-[#fcfbfb]">
+				<div className="ml-[0px] w-full mobile:ml-[70px] alg:ml-majorClamp lg:border-l-4 flex flex-col bg-[#fcfbfb]">
 					{
 						isMobile? (
 							<MobileHeading />
