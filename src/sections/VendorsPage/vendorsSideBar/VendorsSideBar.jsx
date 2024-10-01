@@ -44,7 +44,7 @@ const LinkElm = ({ link }) => {
 
 
 	return (
-		<div className="flex flex-row gap-[1.1vw] justify-center alg:justify-normal" onClick={() => {
+		<div className="flex flex-row gap-[1.1vw] justify-center alg:justify-normal cursor-[pointer]" onClick={() => {
 			startTransition(() => {
 				navigate(link.link)
 			})
