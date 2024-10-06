@@ -1,9 +1,31 @@
 import React from "react"
 
+import { useNavigate } from "react-router-dom"
+import { useTransition } from "react"
+
 const VendorHeading = ({settings}) => {
+	const navigate = useNavigate()
+	
+	const [isPending, startTransition] = useTransition()
+	if(isPending){
+				document.querySelector('.main-progress').classList.remove('end')
+				document.querySelector('.main-progress').classList.add('start')
+	}else{
+				document.querySelector('.main-progress').classList.remove('start')
+				document.querySelector('.main-progress').classList.add('end')
+			setTimeout(() => {
+					document.querySelector('.main-progress').classList.remove('start')
+				document.querySelector('.main-progress').classList.remove('end')
+			}, 1200)
+	}
+
     return (
         <React.Fragment>
-            <div className="w-[5.2vw] my-[3vw]  lg:mt-[1vw] lg:mb-[3vw] lg:w-[24px] lg:h-[24px]">
+            <div className="w-[5.2vw] my-[3vw]  lg:mt-[1vw] lg:mb-[3vw] lg:w-[24px] lg:h-[24px]" onClick={() => {
+				  startTransition(() => {
+					navigate('/user-dashboard')
+				 })
+			}}>
 					<img
 						className="w-full h-full object-cover"
 						src="/assets/icons/left.svg"

@@ -39,9 +39,17 @@ main{
 	z-index: 0;
 }
 
+.scrollbar-hidden::-webkit-scrollbar{
+	display: none;
+}
+
 select:focus,
 select:active {
 	outline: none;
+}
+
+.capitailise{
+	text-transform: uppercase;
 }
 
 textarea {
