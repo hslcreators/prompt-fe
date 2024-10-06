@@ -1,7 +1,7 @@
 import VendorsSideBar from '@/sections/VendorsPage/vendorsSideBar/VendorsSideBar'
 import '../sections/Activity/activity.css'
 
-import React, { useEffect , useState, useRef} from 'react'
+import React, { useEffect , useState, useRef, useTransition} from 'react'
 import VendorsSearchArea from '@/sections/VendorsPage/vendorsSearchArea/VendorsSearchArea'
 import useFetch from '@/utils/useFetch'
 
@@ -13,6 +13,8 @@ import Order from '@/sections/Activity/Order'
 import MobileHeading from '@/components/MobileHeading/MobileHeading'
 import MobileFooter from '@/components/MobileFooter/MobileFooter'
 import { progressRef } from '@/components/Progress/Progress'
+import { useNavigate } from 'react-router-dom'
+
 
 
 
@@ -23,6 +25,29 @@ const UserActivityPage = () => {
             user: state.user,
             isVendor: state.isVendor
         }))
+
+        const { openOrderWindow, setOpenOrderWindow, activeOrder, setActiveOrder } = useActivityNavStore((state)=> ({
+            openOrderWindow: state.openOrderWindow,
+            setOpenOrderWindow: state.setOpenOrderWindow,
+            activeOrder: state.activeOrder,
+            setActiveOrder: state.setActiveOrder
+        }))
+    
+
+        const navigate = useNavigate()
+	
+        const [isPending, startTransition] = useTransition()
+        if(isPending){
+                    document.querySelector('.main-progress').classList.remove('end')
+                    document.querySelector('.main-progress').classList.add('start')
+        }else{
+                    document.querySelector('.main-progress').classList.remove('start')
+                    document.querySelector('.main-progress').classList.add('end')
+                setTimeout(() => {
+                        document.querySelector('.main-progress').classList.remove('start')
+                    document.querySelector('.main-progress').classList.remove('end')
+                }, 1200)
+        }
 
         const [isMobile, setIsMobile] = useState(window.innerWidth <= 550)
 
@@ -35,21 +60,19 @@ const UserActivityPage = () => {
         //     openOrderWindow: state.openOrderWindow
         // }))
 
+    let isRendered
+
     useEffect(()=>{
-        const url =  `${root}/orders/ef04f319-3aa8-4db9-8bb9-c4d5fc650a4d`
-        const headers = {
-			'Authorization': `Token ${token}`
-		}
-        useFetch(url, false, headers, 'get').then(({data, error}) => {
- 
-        })
-        setIsMobile(prev => window.innerWidth <= 550)
-        document.querySelector('.main-progress').classList.remove('start')
-		document.querySelector('.main-progress').classList.add('end')
-		setTimeout(() => {
-			document.querySelector('.main-progress').classList.remove('start')
-			document.querySelector('.main-progress').classList.remove('end')
-		}, 1200)
+        if(!isRendered){
+            isRendered = true
+            setIsMobile(prev => window.innerWidth <= 550)
+            document.querySelector('.main-progress').classList.remove('start')
+            document.querySelector('.main-progress').classList.add('end')
+            setTimeout(() => {
+                document.querySelector('.main-progress').classList.remove('start')
+                document.querySelector('.main-progress').classList.remove('end')
+            }, 1200)
+        }
     }, [])
     return (
         <React.Fragment>
@@ -66,7 +89,11 @@ const UserActivityPage = () => {
                     <div className="activity-content">
                         <div className="flex flex-col pt-[3vw] lg:pt-[4vw]  nxl:pt-[1vw]  mt-[30px] ml-[30px]">
                             <button className="flex flex-row vsm:mb-0 lg:mb-[2vw]">
-                                <div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]">
+                                <div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]" onClick={() => {
+                                     startTransition(() => {
+                                        navigate(-1)
+                                     })
+                                }}>
                                     <img
                                         className="w-full h-full object-cover"
                                         src="/assets/icons/left.svg"
@@ -87,7 +114,7 @@ const UserActivityPage = () => {
 					    }
                     </div>
                 </div>
-                <Order />
+                <Order activeOrder={ activeOrder }/>
             </div>
         </React.Fragment>
     )

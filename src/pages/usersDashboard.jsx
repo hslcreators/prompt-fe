@@ -15,14 +15,19 @@ const usersDashboard = () => {
 		setIsMobile(prev => window.innerWidth <= 550)
 	})
 
+	let isRendered = false
+
 	useEffect(()=>{
 		setIsMobile(prev => window.innerWidth <= 550)
-		document.querySelector('.main-progress').classList.remove('start')
-		document.querySelector('.main-progress').classList.add('end')
-		setTimeout(() => {
+		if(!isRendered){
 			document.querySelector('.main-progress').classList.remove('start')
-			document.querySelector('.main-progress').classList.remove('end')
-		}, 1200)
+			document.querySelector('.main-progress').classList.add('end')
+			setTimeout(() => {
+				document.querySelector('.main-progress').classList.remove('start')
+				document.querySelector('.main-progress').classList.remove('end')
+			}, 1200)
+			isRendered = true
+		}
 	}, [])
 	return (
 		<PageContainer>

@@ -1,14 +1,15 @@
 import './order.css'
 import { useActivityNavStore } from '@/utils/OtherStores'
 import { root, useAuthStore } from '@/utils/AuthStore'
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import useFetch from '@/utils/useFetch'
+import { useNavigate } from 'react-router-dom'
 
-const Order = () => {
-    const { openOrderWindow, setOpenOrderWindow, activeOrder, setActiveOrder } = useActivityNavStore((state)=> ({
+const Order = ({ activeOrder, uploadForm }) => {
+    const { openOrderWindow, setOpenOrderWindow, setActiveOrder } = useActivityNavStore((state)=> ({
         openOrderWindow: state.openOrderWindow,
         setOpenOrderWindow: state.setOpenOrderWindow,
-        activeOrder: state.activeOrder,
+        // activeOrder: state.activeOrder,
         setActiveOrder: state.setActiveOrder
     }))
 
@@ -31,8 +32,10 @@ const Order = () => {
         const body = JSON.stringify({
             is_complete: status
         })
+
+        useFetch()
+
         useFetch(url, body, headers, 'put').then(({ data: markCompleteData, error: markCompleteError })=>{
- 
             setLoading(prev => false)
             if(markCompleteData){
                 setActiveOrder({
@@ -43,6 +46,22 @@ const Order = () => {
         })
     }
 
+    const navigate = useNavigate()
+
+    const [isPending, startTransition] = useTransition()
+ 
+     if(isPending){
+                 document.querySelector('.main-progress').classList.remove('end')
+                 document.querySelector('.main-progress').classList.add('start')
+     }else{
+                 document.querySelector('.main-progress').classList.remove('start')
+                 document.querySelector('.main-progress').classList.add('end')
+             setTimeout(() => {
+                     document.querySelector('.main-progress').classList.remove('start')
+                 document.querySelector('.main-progress').classList.remove('end')
+             }, 1200)
+     }
+
     return (
         <>
             {
@@ -51,10 +70,11 @@ const Order = () => {
                 <div className="order-window">
                     <div className="order-overflow">
                     <div className="order-heading">
-                        <h2>Order Details</h2>
+                        <h2>Order { uploadForm? 'Complete !' : 'Details' } </h2>
                     </div>
                     <div className="close" onClick={()=>{
                         setOpenOrderWindow(false)
+                        setActiveOrder(false)
                     }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -140,26 +160,43 @@ const Order = () => {
                         </div>
                     </div>
                     {
-                        isVendor? (
-                            <button style={ { pointerEvents: loading? 'none' : 'all' } } onClick={() => {
-                                markComplete(activeOrder.is_complete? false : true)
-                            }}>
-                                {
-                                    loading? (
-                                        <img src="/assets/icons/loader.gif" alt="" />
+                        uploadForm? (
+                            <>
+                                  <button style={ { pointerEvents: loading? 'none' : 'all' } } onClick={() => {
+                                            setOpenOrderWindow(false)
+                                            startTransition(() => {
+                                                navigate('/')
+                                            })
+                                        }}>
+                                         Back to Home
+                                    </button>
+                            </>
+                        ):(
+                            <>
+                                 {
+                                    isVendor? (
+                                        <button style={ { pointerEvents: loading? 'none' : 'all' } } onClick={() => {
+                                            markComplete(activeOrder.is_complete? false : true)
+                                        }}>
+                                            {
+                                                loading? (
+                                                    <img src="/assets/icons/loader.gif" alt="" />
+                                                ):(
+                                                    <>{
+                                                        activeOrder.is_complete? (
+                                                            <>Flag Uncomplete</>
+                                                        ):(
+                                                            <>Mark Complete</>
+                                                        )
+                                                    }</>
+                                                )
+                                            }
+                                        </button>
                                     ):(
-                                        <>{
-                                            activeOrder.is_complete? (
-                                                <>Flag Uncomplete</>
-                                            ):(
-                                                <>Mark Complete</>
-                                            )
-                                        }</>
+                                        <></>
                                     )
                                 }
-                            </button>
-                        ):(
-                            <></>
+                            </>
                         )
                     }
                     </div>

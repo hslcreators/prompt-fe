@@ -1,11 +1,35 @@
 import React from "react";
 
+import { useTransition } from "react";
+import { useNavigate } from "react-router-dom";
+
 const VendorsSearchFilter = () => {
+
+	const navigate = useNavigate()
+
+	const [isPending, startTransition] = useTransition()
+	if(isPending){
+				document.querySelector('.main-progress').classList.remove('end')
+				document.querySelector('.main-progress').classList.add('start')
+	}else{
+				document.querySelector('.main-progress').classList.remove('start')
+				document.querySelector('.main-progress').classList.add('end')
+			setTimeout(() => {
+					document.querySelector('.main-progress').classList.remove('start')
+				document.querySelector('.main-progress').classList.remove('end')
+			}, 1200)
+	}
+
+
 	return (
 		<React.Fragment>
 			<div className="flex flex-col pt-[3vw] pb-[7vw] lg:pt-[4vw] lg:pb-[6vw] nxl:pt-[1vw] nxl:pb-[4vw]">
 				<button className="flex flex-row vsm:mb-0 lg:mb-[2vw]">
-					<div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]">
+					<div className="w-[5.2vw] h-[5.2vw] lg:w-[14px] lg:h-[14px] xl:w-[24px] xl:h-[24px] relative top-[1.3vw] lg:top-[8px] xl:top-[10px]" onClick={() => {
+						startTransition(() => {
+							navigate(-1)
+						})
+					}}>
 						<img
 							className="w-full h-full object-cover"
 							src="/assets/icons/left.svg"

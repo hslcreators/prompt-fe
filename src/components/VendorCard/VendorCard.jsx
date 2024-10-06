@@ -40,10 +40,10 @@ const VendorCard = ({ vendorData, search }) => {
 					/>
 				</button>
 				<div className="text-[#4A5568] font-roboto font-medium">
-					<div>{ vendorData.print_service_name }</div>
+					<div className="mt-[8px]">{ vendorData.print_service_name }</div>
 					<div>₦ { vendorData.uncoloured_rate }</div>
 				</div>
-				<div className="text-[#525252] font-normal">{ vendorData.location }</div>
+				<div className="text-[#525252] font-normal w-[90%] mb-[7px]">{ vendorData.location }</div>
 				<Ratings rating = { vendorData.average_rating }/>
 		</div>
 	);

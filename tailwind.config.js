@@ -9,6 +9,7 @@ export default {
 				manrope: ["Manrope", "sans-serif"],
 				roboto: ["Roboto", "sans-serif"],
 			},
+			scrollbar: ['hidden'],
 			screens: {
 				vsm: "1px",
 				sm: "375px",
@@ -24,7 +25,10 @@ export default {
 				settingsHead: "clamp(20px, 2.4vw, 30px)",
 			},
 			width: {
-				searchBar: "calc(100% - 50px)"
+				searchBar: "calc(100% - 50px)",
+			},
+			height: {
+			    activityClamp: "calc(100% - 170px)"
 			},
 			textColor: {
 				customGray: "#3b3b3b",
