@@ -8,6 +8,8 @@ const useActivityNavStore = create((set) => ({
     setActive: (data) => set((state) => ({ active: data })),
     openOrderWindow: false,
     setOpenOrderWindow:  (data) => set((state) => ({ openOrderWindow: data })),
+    slide: false,
+    setSlide: (data) => set((state) => ({ slide: data })),
     activeOrder: false,
     setActiveOrder: (data) => set((state) => ({ activeOrder: data })),
 }))

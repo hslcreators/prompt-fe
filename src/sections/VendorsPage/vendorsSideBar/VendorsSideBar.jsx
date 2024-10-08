@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Logo from "@components/Logo/Logo";
 import UserProfile from "@components/UserProfile/UserProfile";
 import { useNavigate } from "react-router-dom";
 import { useTransition } from "react";
 import { progressRef } from "@/components/Progress/Progress";
+import { useActivityNavStore } from "@/utils/OtherStores";
 
 
 const navLinks = [
@@ -24,10 +25,16 @@ const navLinks = [
 	}
 ]
 
+let sideNavRef
+
 
 const LinkElm = ({ link }) => {
 	const navigate = useNavigate();
 	const [isPending, startTransition] = useTransition()
+
+
+	sideNavRef = useRef(sideNavRef)
+	
 
 	if(isPending){
 		document.querySelector('.main-progress').classList.remove('end')
@@ -42,12 +49,20 @@ const LinkElm = ({ link }) => {
 	}
 
 
+	const { setSlide } = useActivityNavStore((state) => ({
+		setSlide: state.setSlide
+	}))
+
 
 	return (
-		<div className="flex flex-row gap-[1.1vw] justify-center alg:justify-normal cursor-[pointer]" onClick={() => {
-			startTransition(() => {
-				navigate(link.link)
-			})
+		<div className="flex flex-row gap-[1.1vw] justify-center alg:justify-normal cursor-[pointer] sidenav-btn" onClick={() => {
+			if(link.link == '/activity'){
+				setSlide(true)
+			}else{
+				startTransition(() => {
+					navigate(link.link)
+				})
+			}
 		}}>
 				<div className="alg:w-[18px] alg:h-[18px]">
 						<img
@@ -64,7 +79,7 @@ const LinkElm = ({ link }) => {
 const VendorsSideBar = () => {
 	return (
 		<React.Fragment>
-			<div className="hidden fixed border-r-[1.5px] border-[#00000040] w-[70px] alg:w-[30vw] alg:max-w-[240px] select-none mobile:flex flex-col h-[100vh] justify-between rounded-md">
+			<div className="hidden fixed border-r-[1.5px] border-[#00000040] w-[70px] alg:w-[30vw] alg:max-w-[240px] select-none mobile:flex flex-col h-[100vh] justify-between rounded-md side-nav" ref={ sideNavRef }>
 				<div className="flex flex-col gap-[10vw] sm:gap-[52px] items-center max-h-[316px] sm:max-h-none mt-[5vw] md:mt-[2vw] lg:mt-[28px]">
 					<div className="">
 						<Logo />
@@ -83,4 +98,5 @@ const VendorsSideBar = () => {
 	);
 };
 
+export { sideNavRef }
 export default VendorsSideBar;

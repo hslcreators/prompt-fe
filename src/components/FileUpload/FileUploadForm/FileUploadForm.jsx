@@ -7,6 +7,8 @@ import useFetch from "@/utils/useFetch";
 import Error from "@/components/Error";
 import TopLoader from "@/sections/AuthPages/TopLoader";
 import { getPdfPageCount, getPptxSlideCount } from "./getFilePageCount";
+import Order from "@/sections/Activity/Order";
+import { useActivityNavStore } from "@/utils/OtherStores";
 
 
 const config = {
@@ -57,6 +59,14 @@ const FileUploadForm = () => {
 	const [selectedFiles, setSelectedFiles] = useState([]);
 	const [description, setDescription] = useState("");
 
+	const { openOrderWindow, setOpenOrderWindow, activeOrder, setActiveOrder } = useActivityNavStore((state)=> ({
+		openOrderWindow: state.openOrderWindow,
+		setOpenOrderWindow: state.setOpenOrderWindow,
+		activeOrder: state.activeOrder,
+		setActiveOrder: state.setActiveOrder
+	}))
+
+
 	const [update, setUpdate] = useState({ ...config });
 
 	const onUploadContainerClick = (e) => {
@@ -74,15 +84,15 @@ const FileUploadForm = () => {
 	const removeSelectedFile = (fileName) => setSelectedFiles((prev) => [...prev.filter((file) => file.name !== fileName)]);
 
 	// Correct this Implementation
-	useEffect(() => {
-		if (isOpen) {
-			// const interval = setInterval(() => {
-			// 	setUpdate((prev) => ({ ...prev, percent: prev.percent + 20 }));
-			// }, 3000);
-			setTimeout(() => setUpdate((prev) => ({ ...prev, percent: 100 })), 3000);
+	// useEffect(() => {
+	// 	if (isOpen) {
+	// 		// const interval = setInterval(() => {
+	// 		// 	setUpdate((prev) => ({ ...prev, percent: prev.percent + 20 }));
+	// 		// }, 3000);
+	// 		setTimeout(() => setUpdate((prev) => ({ ...prev, percent: 100 })), 3000);
  
-		}
-	}, [update, isOpen]);
+	// 	}
+	// }, [update, activeOrder]);
 
  
 
@@ -100,8 +110,6 @@ const FileUploadForm = () => {
 			const vendorID = Number(window.location.href.split('/')[4])	
  
 			if(e.target.description.value != '' && e.target.no_of_pages.value != '' && e.target.no_of_copies.value != ''){
- 
- 
 				formData.append('no_of_copies', e.target.no_of_copies.value);
 				formData.append('printer_id', vendorID);
 				for (let index = 0; index < selectedFiles.length; index++) {
@@ -120,10 +128,11 @@ const FileUploadForm = () => {
 					'Content-Type': 'multipart/form-data',
 				}	
 				useFetch(url, formData, headers, 'post').then(({data: uploadData, eror: uploadError}) => {
- 
 					if(uploadData){
+						setActiveOrder(uploadData)
+						setOpenOrderWindow(true)
 						setLoading(prev => false)
-						// setIsOpen(true);
+						setIsOpen(true);
 						setStatus(prev => true)
 						setError('File Uploaded Successfully!')
 						setSelectedFiles([]);
@@ -301,12 +310,14 @@ const FileUploadForm = () => {
 					</button>
 				</div>
 			</form>
-			<ProgressBar
-				config={update}
-				setConfig={setUpdate}
-				setIsOpen={setIsOpen}
-				isOpen={isOpen}
-			/>
+			{
+				activeOrder? (
+					<Order activeOrder={ activeOrder  } uploadForm = { true }/>
+					// <>rreeq</>
+				):(
+					<></>
+				)
+			}
 		</section>
 	);
 };
