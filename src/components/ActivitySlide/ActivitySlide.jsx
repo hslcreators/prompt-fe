@@ -146,7 +146,7 @@ const ActivitySlide = () => {
             return el.id == button.id
         }))[0].active? 'active': false : false
         return (
-            <div className={`h-[33px] bg-[#e2e2e2]  group hover:bg-[#676767] transition duration-[300] ${ show? 'flex' : 'hidden' } ${ focus? 'bg-[#676767]' : '' }  ${ button.id == 'order-completed'? 'w-[90px]' : 'w-[80px]' } flex-shrink-0 items-center justify-center mx-[10px] cursor-[pointer]`} onClick={() => {
+            <div className={`h-[33px]  group hover:bg-[#676767] transition duration-[300] ${ show? 'flex' : 'hidden' } ${ focus? 'bg-[#676767]' : 'bg-[#e2e2e2]' }  ${ button.id == 'order-completed'? 'w-[90px]' : 'w-[80px]' } flex-shrink-0 items-center justify-center mx-[10px] cursor-[pointer]`} onClick={() => {
                 if(active == button.id){
                     setActive('orders')
                 }else{

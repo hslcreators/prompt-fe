@@ -9,21 +9,79 @@ const Order = ({ activeOrder, isVendor }) => {
 
     // console.log(activeOrder)
     const [loading, setLoading] = useState(false)
+    const [downLoading, setDownloading] = useState(false)
 
-    const { openOrderWindow, setOpenOrderWindow, setActiveOrder } = useActivityNavStore((state)=> ({
+    const { openOrderWindow, setOpenOrderWindow, setActiveOrder, setActive, setSelected } = useActivityNavStore((state)=> ({
         openOrderWindow: state.openOrderWindow,
         setOpenOrderWindow: state.setOpenOrderWindow,
         // activeOrder: state.activeOrder,
-        setActiveOrder: state.setActiveOrder
+        setActiveOrder: state.setActiveOrder,
+        setSelected: state.setSelected,
+        setActive: state.setActive
     }))
 
-    console.log(activeOrder)
+    // console.log(activeOrder)
 
 
 
     const { token } = useAuthStore((state) => ({
 		token: state.token,
 	}))
+
+    console.log(activeOrder)
+
+    const openFile = async (base64String, json, fileName) => {
+        const extentsion = fileName.split('.')[1]
+        const mimeType = json.extensions.find(function(el) {
+            return el.extension == `.${extentsion}`
+        }).mimeType
+        try{
+            const byteCharacters = await atob(base64String);
+            
+            const byteNumbers = await new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = await new Uint8Array(byteNumbers);
+            const blob = new Blob([byteArray], { type: mimeType });
+            const url = await URL.createObjectURL(blob);
+            return url
+        }catch(err){
+            throw err
+        }
+     }
+
+     const downloadFile = (id, e) => {
+        console.log('s')
+        setDownloading(prev => true)
+        const url = `${root}/orders/document/${id}`
+        const headers = {
+            'Authorization': `Token ${token}`,
+            'Content-Type': 'application/json',
+        }	
+        useFetch(url, false, headers, 'get').then(({data: downloadData, error: downloadError }) => {
+            if(downloadData){
+                fetch('/mime.json')
+                .then((response) => response.json())
+                .then((json) => {
+                    openFile(downloadData.document, json, downloadData.document_name).then((url) => {
+                        setDownloading(prev => false)
+                        const a = document.createElement('a')
+                        a.href = url
+                        a.download = downloadData.document_name
+                        document.body.appendChild(a)
+                        a.click()
+                        document.body.removeChild(a); 
+                        URL.revokeObjectURL(url)
+                    }).catch(err => {
+                        setDownloading(prev => false)
+                    })
+                });   
+            }else{
+
+            }
+        })
+     }
 
     const updateIsComplete = (status) => {
         setLoading(prev => true)
@@ -36,11 +94,11 @@ const Order = ({ activeOrder, isVendor }) => {
         const body = JSON.stringify({
             is_complete: status
         })
+        
 
 
         useFetch(url, body, headers, 'put').then(({ data: markCompleteData, error: markCompleteError })=>{
             setLoading(prev => false)
-            console.log(markCompleteData, markCompleteError)
             if(markCompleteData){
                 setActiveOrder({
                     ...activeOrder,
@@ -55,6 +113,14 @@ const Order = ({ activeOrder, isVendor }) => {
            <div className="w-[full] h-[auto] flex flex-col items-center relative">
             <div style={ { zIndex: 1 } } onClick={ () => {
                 setActiveOrder(false)
+                setSelected([{
+                    id: 'orders',
+                    active: false
+                },{
+                    id: 'reviews',
+                    active: false
+                }])
+                setActive('orders')
             } }  className="absolute top-[40px] left-[30px] cursor-[pointer]">
                 <img src="/assets/icons/leftArrow.svg" alt="" />
             </div>
@@ -102,14 +168,27 @@ const Order = ({ activeOrder, isVendor }) => {
                         <h3>Files</h3>
                     </div>
                     <div className="w-[full] h-[95px] overflow-x-hidden">
-                        <div className="w-[full] h-[auto]">
-                            <div className="w-[full] h-[35px] flex overflow-y-hidden items-center" style={ { borderBottom: '1px solid #bdbdbd' }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-file-earmark w-[17px] h-[17px] ml-[10px]" viewBox="0 0 16 16">
-                                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
-                                </svg>  
-                                <a className = "ml-[10px]" href={ `` }>{ 'print.docx' }</a>
-                            </div>
-                        </div>
+                        {
+                            activeOrder.documents.map(doc => (
+                                <div className="w-[full] h-[auto]">
+                                    <div className="w-[full] h-[35px] flex overflow-y-hidden items-center relative" style={ { borderBottom: '1px solid #bdbdbd' }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-file-earmark w-[17px] h-[17px] ml-[10px]" viewBox="0 0 16 16">
+                                        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                                        </svg>  
+                                        <a className = "ml-[10px] cursor-[pointer] hover:underline" onClick={(e) => {
+                                            downloadFile(doc.id, e)
+                                        }}>{ doc.name }</a>
+                                        {
+                                            downLoading? (
+                                                <img src="/assets/icons/loader.gif" alt="" className="w-[20px] h-[20px] absolute right-[7px]"/>
+                                            ):(
+                                                <></>
+                                            )
+                                        }
+                                    </div>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <button className="w-[130px] h-[36px] flex items-center justify-center bg-[#524ECA] text-[#fff] text-[14px] cursor-[pointer] mb-[16px]" onClick={ () => {

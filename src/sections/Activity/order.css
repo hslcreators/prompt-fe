@@ -152,6 +152,7 @@
 .order-file{
     width: 100%;
     height: 35px;
+    position: relative;
     border-bottom: 1px solid #bdbdbd;
     display: flex;
     overflow-y: hidden;
@@ -164,6 +165,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.order-file .download-icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 35px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .order-file a{

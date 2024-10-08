@@ -1,0 +1,30 @@
+{
+    "extensions": [
+        { "extension": ".html", "mimeType": "text/html" },
+        { "extension": ".css", "mimeType": "text/css" },
+        { "extension": ".js", "mimeType": "application/javascript" },
+        { "extension": ".json", "mimeType": "application/json" },
+        { "extension": ".txt", "mimeType": "text/plain" },
+        { "extension": ".jpg", "mimeType": "image/jpeg" },
+        { "extension": ".jpeg", "mimeType": "image/jpeg" },
+        { "extension": ".png", "mimeType": "image/png" },
+        { "extension": ".gif", "mimeType": "image/gif" },
+        { "extension": ".svg", "mimeType": "image/svg+xml" },
+        { "extension": ".pdf", "mimeType": "application/pdf" },
+        { "extension": ".xml", "mimeType": "application/xml" },
+        { "extension": ".zip", "mimeType": "application/zip" },
+        { "extension": ".mp4", "mimeType": "video/mp4" },
+        { "extension": ".mp3", "mimeType": "audio/mpeg" },
+        { "extension": ".wav", "mimeType": "audio/wav" },
+        { "extension": ".json", "mimeType": "application/json" },
+        { "extension": ".csv", "mimeType": "text/csv" },
+        { "extension": ".doc", "mimeType": "application/msword" },
+        { "extension": ".docx", "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
+        { "extension": ".xls", "mimeType": "application/vnd.ms-excel" },
+        { "extension": ".xlsx", "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
+        { "extension": ".ppt", "mimeType": "application/vnd.ms-powerpoint" },
+        { "extension": ".pptx", "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation" },
+        { "extension": ".apk", "mimeType": "application/vnd.android.package-archive" },
+        { "extension": ".exe", "mimeType": "application/vnd.microsoft.portable-executable" }
+    ]
+}
