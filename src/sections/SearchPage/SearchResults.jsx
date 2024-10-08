@@ -80,7 +80,7 @@ const SearchResults = () => {
 					<></>
 				)
 			}
-			<div className="flex flex-row min-h-[300px] flex-wrap content-center gap-x-[4.5vw] gap-y-[4.5vw] nxl:gap-x-[3vw] xl:gap-x-[1.5vw]">
+			<div className={`flex flex-row min-h-[300px] flex-wrap content-center ${ loading? 'justify-center' : '' } gap-x-[4.5vw] gap-y-[4.5vw] nxl:gap-x-[3vw] xl:gap-x-[1.5vw]`}>
 				{
 					loading? (
 						<LoadSpinner />
