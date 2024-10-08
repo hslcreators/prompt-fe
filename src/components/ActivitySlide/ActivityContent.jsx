@@ -54,6 +54,7 @@ const ActivityContent = () => {
         let url
         let orders
         let headers
+        console.log(active)
         switch (active) {
             case 'orders':
                   url =  isVendor? `${root}/orders/printer/` : `${root}/orders/user/`

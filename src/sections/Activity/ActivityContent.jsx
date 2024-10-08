@@ -8,6 +8,7 @@ import LoadSpinner from "@/components/LoadSpnnner"
 import { formatDate } from "@/utils/dateFormat"
 
 
+
 const ActivityContent = () => {
     const { active, setOpenOrderWindow, setActiveOrder } = useActivityNavStore((state)=> ({
         active: state.active,
@@ -19,6 +20,8 @@ const ActivityContent = () => {
 		user: state.user,
         isVendor: state.isVendor
 	}))
+
+
 
     const [contentType, setContentType] = useState('orders')
     const [data, setData] = useState([])
